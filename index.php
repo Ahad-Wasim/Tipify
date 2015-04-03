@@ -23,9 +23,9 @@
 		
 		<section id = 'main_section'>
 
-		<div class = 'jumbotron'>
-			<h1>Im bored</h1>
-		</div>
+		
+			<h1>Add a Carousel Slide show herer</h1>
+		
 
 		<div class= 'container'  >
 			<div class = 'row'>
