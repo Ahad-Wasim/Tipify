@@ -1,4 +1,3 @@
-
 	<head>
 		<title>Tipify | Home Page </title>
 		<link rel = 'stylesheet' type = 'text/css' href = 'assets/css/main.css'>
@@ -10,12 +9,61 @@
 
 	<body class = 'tipify'>
 
+
+	
+
+		<script type="text/javascript">
+
+	     	function toggle_visibility(id) {
+	       		var e = document.getElementById(id);
+	       			if(e.style.display == 'block')
+	         		  e.style.display = 'none';
+	      			else
+	      			  //e.classList.add('animated zoomOut');
+	          		  e.style.display = 'block';
+	    	}
+		</script>
+
+
+
+	<div id = 'popup-box1' class='popup-position'>
+		<div id = 'popup-wrapper'>
+			<div id = 'popup-container' class = 'animated zoomIn'>
+			
+				<form class = 'login_form'>
+
+					<div class = 'login_left'>
+						<input type = 'email' placeholder='Email'><br>
+						<input type = 'password' name ='password' placeholder='password'><br>
+						<input type = 'submit' value='submit'>
+					</div>
+
+
+					<div class = 'login_right'>
+						<h3> Don't have an account.<h3> 
+						<h4>Click Here to Register</h4>
+						<a href ='#'>Sign Up!</a>
+					</div>
+
+
+				</form>
+
+				<div class = 'close_button'><a href='javascript:void(0)' onclick = "toggle_visibility('popup-box1')">x</a></div>
+			</div> <!-- popup container -->
+		</div> <!-- popup wrapper end -->
+	</div> <!-- popup_box1 end -->
+
+
+
+
+
+
 		<header class = 'container-fluid '>
 			<img id = 'logo' src = 'assets/css/images/logo.gif'>
 
 			<div class="rightCorner">
-  				<a href='#' class = 'login'> Login</a>
-  				<a href = '#' class="register"> Sign Up </a>
+  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = 'login'> Login</a>
+  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = "register"> Sign Up </a>
 			</div>
 
 		</header>
@@ -52,7 +100,31 @@
 	
 
 		<div style = 'background: #5cc642; height:100px; width: 100%'></div>  <!-- DELETE THIS -->
-		<div id='geolocation'> Click me for the geo location</div>
+		
+
+
+		
+
+		<div id='geolocation'>
+			<h3> Click here to determine your longitude and latitude</h3>
+			<div class = 'pacman'>
+				<svg width="120px" height="120px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-pacman">
+				<rect x="0" y="0" width="100" height="100" fill="#ffffff" class="bk"/>
+				<path d="M0 50A50 50 0 1 0 100 50" fill="#f0c741" transform="rotate(30 50 50)">
+				<animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="30 50 50" to="30 50 50" values="30 50 50;0 50 50;30 50 50"/>
+				</path>
+				<path d="M0 50A50 50 0 1 1 100 50" fill="#f0c741" transform="rotate(-30 50 50)">
+				<animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="-30 50 50" to="-30 50 50" values="-30 50 50;0 50 50;-30 50 50"/>
+				</path>
+				</svg>
+			</div>
+		</div>
+
+		
+
+
+
+
 
 		<footer>
 			<h2> This will be my footer</h2>
@@ -60,10 +132,13 @@
 		</footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script type = 'text/javascript' src = 'assets/js/geolocation.js'></script>
+		<script type = 'text/javascript' src = 'assets/js/main.js'></script>
+		<script type = 'text/javascript' src = 'assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
+		<script type = 'text/javascript' src = 'assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
 		<script type= 'text/javascript' src='assets/css/wow_js/wow.js'></script>
 		<script>
 			 new WOW().init();
 		</script>
 
+	
 	</body>

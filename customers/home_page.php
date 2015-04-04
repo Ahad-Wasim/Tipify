@@ -43,7 +43,7 @@
 
 <section style = 'background:orange'> <!-- Delete this style -->
 <label>Find Restaurant: </label><input type = 'text' name ='restaurant'><br>
-<label>Find Waiter: </label><input type = 'text' name ='restaurant'>
+<label>Find an Employee: </label><input type = 'text' name ='restaurant'>
 </section>
 
 
