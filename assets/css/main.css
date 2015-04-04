@@ -64,7 +64,27 @@
 	display:table-cell;
 }
 
+
+.register_form{
+ 	background:lavender;
+ 	display:table;
+ }
+
+ .register_left{
+ 	border:1px solid red;
+ 	display:table-cell;
+ }
+
+
+.register_right{
+	border:1px solid green;
+	display:table-cell;
+}
+
+
 /*   login popup  */
+
+
 
 
 

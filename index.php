@@ -31,19 +31,9 @@
 			<div id = 'popup-container' class = 'animated zoomIn'>
 			
 				<form class = 'login_form'>
-
-					<div class = 'login_left'>
-						<input type = 'email' placeholder='Email'><br>
-						<input type = 'password' name ='password' placeholder='password'><br>
-						<input type = 'submit' value='submit'>
-					</div>
-
-
-					<div class = 'login_right'>
-						<h3> Don't have an account.<h3> 
-						<h4>Click Here to Register</h4>
-						<a href ='#'>Sign Up!</a>
-					</div>
+					<div class = 'whole_form'>
+						
+					</div> <!-- Whole form -->
 
 
 				</form>
@@ -62,8 +52,8 @@
 			<img id = 'logo' src = 'assets/css/images/logo.gif'>
 
 			<div class="rightCorner">
-  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = 'login'> Login</a>
-  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = "register"> Sign Up </a>
+  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = 'login' id = 'login'> Login</a>
+  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = "register" id='signup'> Sign Up </a>
 			</div>
 
 		</header>
@@ -139,6 +129,10 @@
 		<script>
 			 new WOW().init();
 		</script>
+
+
+
+		
 
 	
 	</body>
