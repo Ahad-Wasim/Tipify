@@ -4,7 +4,9 @@
 		<link rel = 'stylesheet' href = 'assets/css/bootstrap/css/bootstrap.min.css'>
 		<link rel = 'stylesheet' type = 'text/css' href = 'assets/css/animate.css'>
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	</head>
+
 
 
 	<body class = 'tipify'>
@@ -47,7 +49,7 @@
 
 
 
-
+		
 		<header class = 'container-fluid '>
 			<img id = 'logo' src = 'assets/css/images/logo.gif'>
 
@@ -56,7 +58,21 @@
   				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = "register" id='signup'> Sign Up </a>
 			</div>
 
+
+			<div id = 'menubar1'>
+		
+				<a href = '#'>How it Works<a></a>
+				<a href = '#'>About Me<a></a>
+				<a href = '#'>Restaurants</a>
+				<a href = '#'>Write a Review</a>
+				<a href = '#'>Help</a>
+
+		</div>
+
 		</header>
+
+
+		
 
 		
 		<section id = 'main_section'>
@@ -64,6 +80,63 @@
 		
 			<h1>Add a Carousel Slide show herer</h1>
 		
+
+
+
+			<style>
+				
+			#carousel{
+				width:8000px;
+			}
+
+
+			#carousel ul{
+				list-style-type: none;
+				width:8000px;
+				margin:0;
+				padding:0;
+				position: relative;
+			}
+
+			#carousel li{
+				display:inline;
+				float: left;
+			}
+
+			</style>
+
+
+			<div id = 'carousel'>
+			<ul>
+				<li>
+					<img  src = 'assets/css/images/fire.jpg' width = 100% height = 500px/>
+					<p>These are some pictures</p>
+				</li>
+				<li>
+					<img  src = 'assets/css/images/service.jpg' width =100% height = 500px/>
+					<p>These are some pictures</p>
+				</li>
+				<li>
+					<img  src = 'assets/css/images/fire.jpg' width = 100% height = 500px/>
+					<p>These are some pictures</p>
+				</li>
+				<li>
+					<img  src = 'assets/css/images/service.jpg' width = 100% height = 500px/>
+					<p>These are some pictures</p>
+				</li>
+				<l9
+					<img src = 'assets/css/images/fire.jpg' width = 100% height = 500px />
+					<p>These are some pictures</p>
+				</li>
+				<li>
+					<img  src = 'assets/css/images/service.jpg' width = 100% height = 500px/>
+					<p>These are some pictures</p>
+				</li>
+			</ul>
+			
+			</div>
+
+
 
 		<div class= 'container'  >
 			<div class = 'row'>
@@ -89,7 +162,9 @@
 
 	
 
-		<div style = 'background: #5cc642; height:100px; width: 100%'></div>  <!-- DELETE THIS -->
+		<div style = 'background: #5cc642; height:100px; width: 100%'>
+			<i class=" fa fa-mobile fa-5x"></i>
+		</div>  <!-- DELETE THIS -->
 		
 
 
@@ -126,11 +201,19 @@
 		<script type = 'text/javascript' src = 'assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
 		<script type = 'text/javascript' src = 'assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
 		<script type= 'text/javascript' src='assets/css/wow_js/wow.js'></script>
+		<script src = 'assets/js/infiniteCarousel/jquery.infinitecarousel.js'></script>
+		
+
 		<script>
 			 new WOW().init();
 		</script>
 
 
+		<script>
+			$('document').ready(function(){
+				$('#carousel').infiniteCarousel();    // This is for the carousel	
+			});
+		</script>
 
 		
 

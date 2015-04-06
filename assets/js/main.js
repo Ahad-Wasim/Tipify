@@ -6,7 +6,7 @@ $('document').ready(function() {
 
 
 		function loginPage(){
-			var login_form = $('<form>').addClass('login_form');
+			var login_form = $('<form>').addClass('login_form').attr({'action':'forms/login_validation.php', 'method':'post'});
 
 			var login_left = $('<div>').addClass('login_left');
 			var email = $('<input>').attr({type: 'email',name: 'email', placeholder: 'email'});
@@ -29,7 +29,7 @@ $('document').ready(function() {
 			$(login_left).append(password,"<br>");
 			$(login_left).append(submit,"<br>");
 			$(login_form).append(login_left);
-			$(login_form).append(login_right);
+			$(login_form).append(login_right);  
 			
 
      	$('.whole_form').html(login_form);
@@ -39,7 +39,7 @@ $('document').ready(function() {
 
      $('#login').click(function(){
      	loginPage();
-     })
+     });
 
 
 
@@ -55,7 +55,7 @@ $('document').ready(function() {
 		var button = $('<input>').attr({type: 'button', value: 'Next Page'}).addClass('nextPage');
 
 
-		var register_right = $('<div>').addClass('register_right')
+		var register_right = $('<div>').addClass('register_right');
 		var why_am_i_here = $('<h3>').text('All ready have an account');
 		var login_direction = $('<h4>').text('Click Here to Login');
 		var login_page = $('<a>').attr({href: '#'}).text('Login!');
@@ -73,36 +73,38 @@ $('document').ready(function() {
 		$(register_form).append(register_right);
 		$(register_right).append(why_am_i_here);
 		$(register_right).append(login_direction);
-		$(register_right).append(login_page);		
+		$(register_right).append(login_page);  
 		
      	$('.whole_form').html(register_form);
      };
 
      function registerPage2(){
-     	/*
-     	<form class = 'register_form'>
+     	
 
-	<div class = 'register_left'>
-		<input type = 'text' name = 'restaurant' placeholder = 'Restaurant'><br>
-		<input type = 'motto' name = 'motto' placeholder = 'Motto'><br>
-		<input type = 'text' name = 'age' placeholder = 'Age'><br>     <!-- You may want a dropdown but it is not very important. Maybe later parts of the code. but you will need to use javascript and the select tag -->
-		<input type = 'text' name = 'position' placeholder = 'Position'><br>
-		<input type = 'radio' name="sex" value="male" checked>Male
-		<input type = 'radio' name="sex" value="female">Female<br>
-		<input type = 'submit' name = 'submit' value = 'submit'><br>
-		<small> Once the first part of the form is complete this would then be the second part</small> <!-- Delete this -->
 
-	</div>
-	*/
 
-		var registerForm2 = $('<form>').addClass('registerForm2');
+		var registerForm2 = $('<form>').addClass('registerForm2').attr({'action':'forms/register_validation.php', 'method':'post'});
+		var restaurant_div = $('<div>').addClass('restaurant_div');
 		var restaurant =  $('<input>').attr({type: 'text',name: 'restaurant', placeholder: 'Restaurant'});
 		var motto =  $('<input>').attr({type: 'text',name: 'motto', placeholder: 'Motto'});
 		var age =  $('<input>').attr({type: 'text',name: 'age', placeholder: 'Your age'});
 		var position =  $('<input>').attr({type: 'text',name: 'position', placeholder: 'Position'});
-		var male =  $('<input>').attr({type: 'radio',value: 'male', checked});
-		var female =  $('<input>').attr({type: 'radio',value: 'female', checked});
-		var submit =  $('<input>').attr({type: 'text',name: 'position', placeholder: 'Position'});
+		var sex = $('<input>').attr({type: 'text', name: 'sex', placeholder:'Gender'});
+		//var male =  $('<input>').attr({type: 'radio',value: 'male'});  use radios later on
+		//var female =  $('<input>').attr({type: 'radio',value: 'female'}); user radios later on
+		var submit =  $('<input>').attr({type: 'submit',name: 'submit', value: 'submit'});
+
+		$(registerForm2).append(restaurant_div);
+		$(restaurant_div).append(restaurant,'<br>');
+		$(restaurant_div).append(motto,'<br>');
+		$(restaurant_div).append(age,'<br>');
+		$(restaurant_div).append(position,'<br>');
+		$(restaurant_div).append(sex,'<br>');
+		//$(restaurant_div).append(male,'<br>');
+		//$(restaurant_div).append(female,'<br>');
+		$(restaurant_div).append(submit);
+
+		$('.whole_form').html(registerForm2);
 
      }
 
@@ -135,37 +137,35 @@ $('document').ready(function() {
 	
 	$('body').on('click', '.nextPage', function(){
 		console.log('do some function here');
-		registerPage2()
+		registerPage2();
 	});
+
+
+	// This will be the question funcitonality 
+
+
+	$('#startbutton').click(function(){
+		$('.display_area').fadeOut('slow');
+		//$('.display_area').html('hello');
+		$('.display_area').fadeIn('slow');
+	});
+
+
+    var $select = $(".1-100");				// select 0-100 functionality
+    for (i=1;i<=100;i++){
+        $select.append($('<option></option>').val(i).html(i));
+    };
+
+	// This will be the question funtionality.
 	
 
+}); // this closes the main document
 
 
 
-
-
-
-
-
-    /*
-     $('.whole_form').fadeOut(function(){
-     	var register_left = $('<div>').addClass('register_left');
-		var firstname = $('<input>').attr({type: 'text',name: 'firstname', placeholder: 'First Name'});
-		var lastname =  $('<input>').attr({type: 'text',name: 'lastname', placeholder: 'Last Name'});	
-		var email =  $('<input>').attr({type: 'email',placeholder: 'Email'});
-		var password =  $('<input>').attr({type: 'password',name: 'password', placeholder: 'Password'});			
-		
-
-     $('.login_form').append(candy);
-     $('.login_form').append(lastname);
- 
-
-     	});
-
-     */
      
 
-}); // this closes the main document
+
 
 
 

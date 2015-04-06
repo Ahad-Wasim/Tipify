@@ -10,7 +10,7 @@
 }
 
 
-/* login popup */
+/* login + Register popup */
 
 .popup-position{ 
 	display:none;
@@ -82,16 +82,16 @@
 }
 
 
-/*   login popup  */
+/* login + Register popup */
 
 
 
 
 
-/*  		Header    */
+/*   Default Page Header    */
 header{
-	border-bottom: 2px solid #5cc642;
-	abackground:#434953;;
+	background:#434953;
+	border-bottom:3px solid #5CC642;
 }
 
 #logo{
@@ -109,21 +109,55 @@ height:160px;
 
 .login{
 	border-radius:5px;
-	color: #434953;
+	color:white;
 	border:none;
 	font-size: 1.4em;
 }
 
 .register{
-	color: #434953;
+	color:white;
 	padding:3px 10px;
 	font-size: 1.4em;
 	border-radius:5px;
-	border: 2px solid #434953;
+	border: 2px solid white;/*#434953*/
 }
 
 
-/*  		Header    */
+
+
+
+
+
+/*  Default Page Header    */
+
+
+
+
+
+
+#menubar1{
+	background: #5cc642;
+	position:absolute;
+	right:0;
+	top:10%;
+	text-align: center;
+	width:50%;
+}
+
+#menubar1 a {
+	margin-left:2%;
+	width:2%;
+	text-decoration: none;
+	color:white;
+	text-shadow: 3px 1px #5cc642;
+	font-size: 1.5em;
+	display:inline;
+	border-right: 1px solid white
+}
+
+#menubar1 a:hover{
+	color:blue;
+}
 
 
 
@@ -131,9 +165,8 @@ height:160px;
 
 
 
-/*  		Main Section      */
 
-
+/*  Default Home Page */
 
 .box{
 	/*border:1px solid black;*/
@@ -156,14 +189,72 @@ height:160px;
 	height:100%;
 }
 
+/* Default Home Page  */
 
 
-/*  		Main Section      */
 
 
+
+
+
+/* Customer Home Page */
+	.customer_profile{
+		background:lavender;
+	}
+
+	.customer_img{
+		border:1px solid black;
+		height:100px;
+		width:100px;
+	}
+	.forgot{
+		background: yellow;
+	}
+
+
+/*  Customer Home Page */
+
+
+
+
+
+/*   Employee Home Page */
+.employee_profile{
+	background: lavender;
+}
+
+.img{
+	border:1px solid black;
+	height:100px;
+	width:100px;
+}
+
+.status{
+	background: green;
+	display:inline-block;
+}
+
+.history{
+	background: red;
+}
+.employee_reviews{
+	background:lavender;
+}
+.friends{
+	background:yellow;
+}
+/* Employee Home Page  */
+
+
+
+
+
+/*Geo Location*/
 .pacman{
 	display:none;    /* Display this block sooner or later */
 }
+/*Geo Location*/
+
 
 
 

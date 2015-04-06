@@ -1,40 +1,23 @@
-
-<style>
-/* Move these css to the main.css page */
-.employee_profile{
-	background: lavender;
-}
-
-.img{
-	border:1px solid black;
-	height:100px;
-	width:100px;
-}
+<?php
+	session_start();
+?>
 
 
 
+<head>
+		<title>Tipify | Employee Page</title>
+		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/main.css'>
+		<link rel = 'stylesheet' href = '../assets/css/bootstrap/css/bootstrap.min.css'>
+		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/animate.css'>
+		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
 
 
-.status{
-	background: green;
-	display:inline-block;
-}
-
-.history{
-	background: red;
-}
-.employee_reviews{
-	background:lavender;
-}
-.friends{
-	background:yellow;
-}
-</style>
 
 
 <header>
-	<a href = '#'>logout</a>
-	<h1> Welcome [Employees Name] </h1>
+	<a href = '../forms/logout.php'>logout</a>
+	<h1> Welcome <?php echo $_SESSION['user_information']['name'] ?> </h1>
 </header>
 
 
@@ -42,12 +25,12 @@
 
 <section>
 	<div class = 'employee_profile'>
-		<h3>this is my restaurant profile</h3>
+		<h3><?php echo $_SESSION['user_information']['restaurant'] ?></h3>
 		<div class = 'img'>IMG</div>
-		<small>Ahad Wasim</small>
-		<small>ahadwasim@yahoo.com</small>
-		<small>415-238-7333</small>
-		<small>19</small>
+		<small><?php echo $_SESSION['user_information']['name'] ?></small>
+		<small><?php echo $_SESSION['user_information']['email'] ?></small>
+		<small><?php echo $_SESSION['user_information']['phone'] ?></small>
+		<small><?php echo $_SESSION['user_information']['age'] ?></small>
 	</div>
 </section>
 
