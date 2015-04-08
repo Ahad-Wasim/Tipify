@@ -198,7 +198,6 @@ $('document').ready(function() {
      	function display_data(response){   // NOTE response is the same ajax response
      		var response_data = response['data'];
 	     		
-					
 
 	     		for(var key in response_data){
 
@@ -211,9 +210,8 @@ $('document').ready(function() {
 	     			
 	     			var radio = null;
 	     			
-		     		//for(var i = 0; i < response_data[key][question_options].length;i++){
-
-		     			
+		     		for(var i = 0; i < response_data[key][question_options].length;i++){
+	
 		     			var question_radio = $('<input>',{
 		     				type:'radio',
 		     				name: radio_name_attribute,
@@ -224,7 +222,7 @@ $('document').ready(function() {
 
 		     			 radio +=question_radio.insertAfter(span);
 		     		
-		     		//} // this closes second for loop
+		     		} // this closes second for loop
 		     		
 		     		
 		     				
