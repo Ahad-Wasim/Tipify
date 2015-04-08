@@ -154,10 +154,107 @@ $('document').ready(function() {
     var $select = $(".1-100");				// select 0-100 functionality
     for (i=1;i<=100;i++){
         $select.append($('<option></option>').val(i).html(i));
-    };
+    }
 
-	// This will be the question funtionality.
+    				//TEST
+   
+    $('.rating-star').click(function(){
+    	send_rating($(this).attr('topic'),$(this).attr('point'));
+    });
+
+
+
+
+
+    function send_rating(topic, point){
+    	console.log('This star has ' + point + ' points');
+    	$.ajax(
+    	{
+    		url:'rating/recieve_rating.php',
+    		data:{
+    			topic: topic,
+    			point: point,
+    		},
+    		dataType: 'json',
+    		method:'POST',
+    		cache:false,
+    		success: function(response){
+    			display_data(response);
+    			//console.log(response);
+    		} // this closes the success function
+
+    	});// this closes the ajax call
+
+    }// this closes send_rating function
+
+     				//TEST
+
+     	
+
+
+     	
+
+
+     	function display_data(response){   // NOTE response is the same ajax response
+     		var response_data = response['data'];
+	     		
+					
+
+	     		for(var key in response_data){
+
+	     			var question = response_data[key]['textbox'];
+	     			var radio_name_attribute = 'questions' +response_data[key]['id'];
+	     			var question_options = response_data[key]['question_options'];
+
+	     			var question_li = $('<li>');
+	     			var question_text = $('<span>').html(question);
+	     			
+	     			var radio = null;
+	     			
+		     		//for(var i = 0; i < response_data[key][question_options].length;i++){
+
+		     			
+		     			var question_radio = $('<input>',{
+		     				type:'radio',
+		     				name: radio_name_attribute,
+		     				class:'radio',
+		     				value: question_options,
+		     				}); // this closes the question radio attribute
+		     			 var span = $('<span>').html(question_options[i]);
+
+		     			 radio +=question_radio.insertAfter(span);
+		     		
+		     		//} // this closes second for loop
+		     		
+		     		
+		     				
+	     			
+	     			question_li.append(question_text, question_radio);
+	     			var container = $('#Food_Quality .question_container');
+	     			container.append(question_li);
+
+	     			
+
+				} // this closes the for in loop*/
+
+     	} // This closes the display_data
+
+			
+
+     	
+
 	
+
+
+
+
+
+
+
+	// This Section will be the question funtionality.
+     	
+	
+
 
 }); // this closes the main document
 

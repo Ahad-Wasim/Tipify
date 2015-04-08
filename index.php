@@ -106,30 +106,30 @@
 			</style>
 
 
-			<div id = 'carousel'>
+			<div id = 'carousel' style = 'width:1440px;'>
 			<ul>
 				<li>
-					<img  src = 'assets/css/images/fire.jpg' width = 100% height = 500px/>
+					<img  src = 'assets/css/images/fire.jpg' width = 100%; height = 500px/>
 					<p>These are some pictures</p>
 				</li>
 				<li>
-					<img  src = 'assets/css/images/service.jpg' width =100% height = 500px/>
+					<img  src = 'assets/css/images/service.jpg' width =100%; height = 500px/>
 					<p>These are some pictures</p>
 				</li>
 				<li>
-					<img  src = 'assets/css/images/fire.jpg' width = 100% height = 500px/>
+					<img  src = 'assets/css/images/fire.jpg' width = 100%; height = 500px/>
 					<p>These are some pictures</p>
 				</li>
 				<li>
-					<img  src = 'assets/css/images/service.jpg' width = 100% height = 500px/>
+					<img  src = 'assets/css/images/service.jpg' width = 100%; height = 500px/>
 					<p>These are some pictures</p>
 				</li>
 				<l9
-					<img src = 'assets/css/images/fire.jpg' width = 100% height = 500px />
+					<img src = 'assets/css/images/fire.jpg' width = 100%; height = 500px />
 					<p>These are some pictures</p>
 				</li>
 				<li>
-					<img  src = 'assets/css/images/service.jpg' width = 100% height = 500px/>
+					<img  src = 'assets/css/images/service.jpg' width = 100%; height = 500px/>
 					<p>These are some pictures</p>
 				</li>
 			</ul>
