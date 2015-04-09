@@ -115,7 +115,7 @@
 </style>
 
 		
-
+				<!-- First Box -->
 <div id = 'questionbox'>
 	<div class = 'display_area'>
 		<h1>Lets find out how much</h1>
@@ -123,7 +123,7 @@
 		<div class = 'button_border'><input type='submit' id = 'startbutton' value = 'Start'></div>
 	</div>
 </div>
-
+				<!-- First Box -->
 		
 
 
@@ -143,8 +143,9 @@
 <div class = 'food_quality' id='Food_Quality'>
  
 <form>
-<h3> Click the submit button to submit the rating </h3>
+<h3>Click the stars to rate the restaurant</h3>
 	<span class="rating">
+
 	        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1"/>
 	        <label for="rating-input-1-5" class="rating-star star5" point = '5' topic = 'Food Quality'> </label>
 	        
@@ -238,81 +239,48 @@
 
 
 
-<?php
 
-/*
-<div class = 'food_quality'>
- 
-<h3>Food Quality</h3>
- <ul>
- 	<li>Rate the food Quality Scale 1-5 ?</li><br>
- 	<div class = 'food_star'>
-	 	<div class="rating">
-				<span class = 'star5' point ='5'>☆</span><span class = 'star4' point ='4'>☆</span><span class = 'star3' point ='3'>☆</span><span class = 'star2' point ='2'>☆</span><span class = 'star1' point ='1'>☆</span>
-		</div>
-	</div><br>
 
- 	<h3>If answer is between 1-3</h3>
- 		
- 		<li>Was the food cold?</li>
- 		
- 		<input type="radio" name="hot_cold" class = 'radio' value = "The food was not Hot Enough!" checked>Not Hot Enough
- 		<input type="radio" name="hot_cold" class = 'radio' value = "No the food was not cold">No it was not cold<br><br>
- 		
 
- 		<li>How did the food taste?</li>
- 		<input type="radio" name="taste_food" class = 'radio' value="The Food was Great" checked>The food was great!
- 		<input type="radio" name="taste_food" class = 'radio' value="The Food was all right">The food was all right.
- 		<input type="radio" name="taste_food" class = 'radio' value="I had better food">I had better
- 		<input type="radio" name="taste_food" class = 'radio' value="The Food was horrible">The food was horrible<br><br>
- 		
- 		<li>Did the food taste fresh?</li>
- 		<input type="radio" name="fresh_food" class = 'radio' value="Yes the food was fresh" checked>Yes
- 		<input type="radio" name="fresh_food" class = 'radio' value="No the food was not fresh">No<br><br>
- 		
- 		<li>Did you find something inside your food?</li>
- 		<input type="radio" name="objectin_food" class = 'radio' value="I found something in my food that was not suppose to be their" checked> Yes!!! Oh the misery
- 		<input type="radio" name="objectin_food" class = 'radio' value="I found nothing">Nope the food was clean yo!<br><br>
- 		<li>
- 			If so what was it<textarea></textarea>
- 		</li><br><br>
- 		
 
- 		<li>Were many of the dishes out of stock?</li>
- 		<input type="radio" name="food_finished" class = 'radio' value="The dishes were out of stock" checked>Many of the dishes were out of stock.
- 		<input type="radio" name="food_finished" class = 'radio' value="None of the dishes were out of stock">I had no problem with this.<br><br>
- 		
- 		<li>Any Other problems you had with the food Quality: <textarea placeholder = 'Please list your reason in here'></textarea></li>
- 		
 
- 		<h3>If answer is 4 </h3>
- 		<li>What could of been better to make your experience perfect: <textarea placeholder = 'Please list your reason in here'></textarea></li>
- </ul>
+								<!-- This is the Service Section -->
 
- </div> <!-- This closes food quality -->
 
-*/
-?>
+<form>
+<h3>Click the stars to rate the restaurant</h3>
+	<span class="rating">
+
+	        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1"/>
+	        <label for="rating-input-1-5" class="rating-star star5" point = '5' topic = 'Service'> </label>
+	        
+	        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1"/>
+	        <label for="rating-input-1-4" class="rating-star star4" point = '4' topic = 'Service'> </label>
+
+	        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1"/>
+	        <label for="rating-input-1-3" class="rating-star star3" point = '3' topic = 'Service'> </label>
+
+	        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1"/>
+	        <label for="rating-input-1-2" class="rating-star star2" point = '2' topic = 'Service'> </label>
+
+	        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1"/>
+	        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Service'> </label>
+	</span><br><br>
+	<div class='question_container2'></div>
+</form><br>
 
 
 
 
 
 
-
-
-
-<div class = 'service'>
+<div class = 'service' id = 'service'>
 
 <h3>Service</h3>
  <ul>
  	<li>Rate the service you have recieved 1-5?</li><br>
 
- 	<div class = 'service_star'>
- 		<div class="rating">
-				<span class = 'star5' point ='5'>☆</span><span class = 'star4' point ='4'>☆</span><span class = 'star3' point ='3'>☆</span><span class = 'star2' point ='2'>☆</span><span class = 'star1' point ='1'>☆</span>
-		</div>
-	</div><br>
+ 	
 
 
  	<h3>If answer is between 1-3</h3>
@@ -361,21 +329,41 @@
 
  </div>
 
+ 												<!-- This is the Service Section -->
 
 
 
 
+
+
+ 												<!-- This is the Atmosphere -->
 <div class = 'atmosphere'>
 
  <h3>Atmosphere</h3>
  <ul>
  	<li>Rate the restuarants atmosphere on a scale of 1-5</li><br>
  	
- 	<div class = 'atmosphere_star'>
- 		<div class="rating">
-				<span class = 'star5' point ='5'>☆</span><span class = 'star4' point ='4'>☆</span><span class = 'star3' point ='3'>☆</span><span class = 'star2' point ='2'>☆</span><span class = 'star1' point ='1'>☆</span>
-		</div>
-	</div><br>
+		 	<form>
+		<h3>Click the stars to rate the restaurant</h3>
+			<span class="rating">
+
+			        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1"/>
+			        <label for="rating-input-1-5" class="rating-star star5" point = '5' topic = 'Atmosphere'> </label>
+			        
+			        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1"/>
+			        <label for="rating-input-1-4" class="rating-star star4" point = '4' topic = 'Atmosphere'> </label>
+
+			        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1"/>
+			        <label for="rating-input-1-3" class="rating-star star3" point = '3' topic = 'Atmosphere'> </label>
+
+			        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1"/>
+			        <label for="rating-input-1-2" class="rating-star star2" point = '2' topic = 'Atmosphere'> </label>
+
+			        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1"/>
+			        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Atmosphere'> </label>
+			</span><br><br>
+			<div class='question_container3'></div>
+		</form><br>
 
  	<h3>If answer is between 1-3</h3>
  		<li>Was the restuarant clean?</li>
@@ -416,7 +404,7 @@
 
 </div> <!-- This closes atmosphere -->
 
-
+												<!-- This is the Atmosphere -->
 
 
 

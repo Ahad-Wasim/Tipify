@@ -25,7 +25,8 @@
 	if(mysqli_num_rows($result) > 0){
 		$questions=[];
 		while($row = mysqli_fetch_assoc($result)){			// were gonna fetch everything and store it into an associative array
-			$questions[]=$row;
+			$questions[]=$row;  // this is bascially pushing it like an array to the questions
+
 	  	}
 	  	//print_r($questions);
 	} 

@@ -23,9 +23,9 @@
 		<h3>this is my customer profile</h3>
 
 		<div class = 'customer_img'>
-			<form action="uploadhandler_easy.php" method="post" enctype="multipart/form-data">
-	    		<input type="file" name="fileToUpload" id="fileToUpload">
-	    		<input type="submit" value="Upload File" name="submit">
+			<form action="../picture_validation/picture_validation.php" method="post" enctype="multipart/form-data">
+	    		<input type="file" name="picUpload" id="picUpload">
+	    		<input type="submit" value="+" name="submit">
 			</form>
 		</div>
 		

@@ -180,7 +180,7 @@ $('document').ready(function() {
     		cache:false,
     		success: function(response){
     			display_data(response);
-    			//console.log(response);
+    			
     		} // this closes the success function
 
     	});// this closes the ajax call
@@ -197,44 +197,48 @@ $('document').ready(function() {
 
      	function display_data(response){   // NOTE response is the same ajax response
      		var response_data = response['data'];
-	     		
 
-	     		for(var key in response_data){
+     		console.log(response_data);
 
-	     			var question = response_data[key]['textbox'];
-	     			var radio_name_attribute = 'questions' +response_data[key]['id'];
-	     			var question_options = response_data[key]['question_options'];
 
-	     			var question_li = $('<li>');
-	     			var question_text = $('<span>').html(question);
-	     			
-	     			var radio = null;
-	     			
-		     		for(var i = 0; i < response_data[key][question_options].length;i++){
-	
-		     			var question_radio = $('<input>',{
-		     				type:'radio',
-		     				name: radio_name_attribute,
-		     				class:'radio',
-		     				value: question_options,
-		     				}); // this closes the question radio attribute
-		     			 var span = $('<span>').html(question_options[i]);
+		     		for(var key in response_data){
 
-		     			 radio +=question_radio.insertAfter(span);
-		     		
-		     		} // this closes second for loop
-		     		
-		     		
-		     				
-	     			
-	     			question_li.append(question_text, question_radio);
-	     			var container = $('#Food_Quality .question_container');
-	     			container.append(question_li);
+						if(response_data[key]['topic'] == 'Food_Quality'){		     			
+			     			
+			     			var question = response_data[key]['textbox'];
+			     			var radio_name_attribute = 'questions' +response_data[key]['id'];
+			     			var question_options = response_data[key]['question_options'];
 
-	     			
+			     			var question_li = $('<li>');
+			     			var question_text = $('<span>').html(question);
+			     			
+			     			var radio = null;
+			     			
+				     		for(var i in response_data[key][question_options]){
+				     			var question_radio = $('<input>',{
+				     				type:'radio',
+				     				name: radio_name_attribute,
+				     				class:'radio',
+				     				value: question_options,
+				     				}); // this closes the question radio attribute
+				     			 var span = $('<span>').html(question_options);
 
-				} // this closes the for in loop*/
+				     			 radio +=question_radio.insertAfter(span);
+				     		
+				     		} // this closes second for loop
 
+			     			question_li.append(question_text, radio);
+			     			var container = $('#Food_Quality .question_container');
+			     			container.append(question_li);
+
+			     		} else if(response_data[key]['topic'] == 'Service'){
+								console.log('this is the service');
+						
+						} else if(response_data[key]['topic'] == 'Atmosphere'){
+								console.log('this is the atmosphere');
+						
+						} // if/else
+					} // this closes the for in loop*/
      	} // This closes the display_data
 
 			
