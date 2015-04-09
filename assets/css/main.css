@@ -124,10 +124,6 @@ height:160px;
 
 
 
-
-
-
-
 /*  Default Page Header    */
 
 
@@ -189,6 +185,29 @@ height:160px;
 	height:100%;
 }
 
+
+/*Geo Location*/
+.pacman{
+	display:none;    /* Display this block sooner or later */
+}
+/*Geo Location*/
+
+
+
+
+
+/*			Footer			*/
+
+footer{
+    position:relative;
+    bottom:0;
+ 	width:100%;
+    height:55%;   /* Height of the footer */
+	background:#434953;
+}
+
+/*			Footer			*/
+
 /* Default Home Page  */
 
 
@@ -209,6 +228,9 @@ height:160px;
 	}
 	.forgot{
 		background: yellow;
+	}
+	#profile_image{
+		background:green;
 	}
 
 
@@ -249,22 +271,9 @@ height:160px;
 
 
 
-/*Geo Location*/
-.pacman{
-	display:none;    /* Display this block sooner or later */
-}
-/*Geo Location*/
 
 
 
 
 
-/*			Footer			*/
 
-footer{
-    position:relative;
-    bottom:0;
- 	width:100%;
-    height:55%;   /* Height of the footer */
-	background:#434953;
-}

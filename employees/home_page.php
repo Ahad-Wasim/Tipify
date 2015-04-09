@@ -2,8 +2,6 @@
 	session_start();
 ?>
 
-
-
 <head>
 		<title>Tipify | Employee Page</title>
 		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/main.css'>
@@ -13,8 +11,6 @@
 </head>
 
 
-
-
 <header>
 	<a href = '../forms/logout.php'>logout</a>
 	<h1> Welcome <?php echo $_SESSION['user_information']['name'] ?> </h1>
@@ -22,20 +18,26 @@
 
 
 
-
 <section>
 	<div class = 'employee_profile'>
 		<h3><?php echo $_SESSION['user_information']['restaurant'] ?></h3>
-		<div class = 'img'>IMG</div>
+
+
+		<div class = 'customer_img'>
+			<?php echo "<img src = '../picture_validation/upload/" . $_SESSION['user_information']['image'] . "'" ?> 
+			<form action="../picture_validation/picture_validation.php" method="post" enctype="multipart/form-data" id = 'profile_image'>
+	    		<input type="file" name="picUpload" id="picUpload">
+	    		<input type="submit" value="+" name="submit">
+			</form>
+		</div>
+
+		
 		<small><?php echo $_SESSION['user_information']['name'] ?></small>
 		<small><?php echo $_SESSION['user_information']['email'] ?></small>
 		<small><?php echo $_SESSION['user_information']['phone'] ?></small>
 		<small><?php echo $_SESSION['user_information']['age'] ?></small>
 	</div>
 </section>
-
-
-
 
 
 <section>
@@ -47,7 +49,7 @@
 	<a href='#' class = 'history'> Click here to see your tip history</a>
 </section>
 
-
+<a href = '../questions.php' >Click Here to Calculate a tip for the restaruant</a>
 
 <section>
 	<div class='friends'>
@@ -59,10 +61,6 @@
 			<li>friend4</li>
 	</div>
 </section>
-
-
-
-
 
 
 <section>

@@ -1,5 +1,6 @@
 <?php
-		
+	echo 'hello';
+	exit;
 	session_start();
 	$connection = mysqli_connect('localhost', 'root', '', 'Tipify_Database');
 	$error = [];
@@ -31,14 +32,14 @@
 			$table = 'consumers_table';
 			$column = 'consumer_id';
 			$header_file = 'customers';
-			$usertype = $_SESSION['user_information']['consumer_id'];
+			$user_id = $_SESSION['user_information']['consumer_id'];			// if the person who is logged in is an employee
 		}
 
-		if($_SESSION['user_information']['type'] == 'employee'){
+		if($_SESSION['user_information']['type'] == 'employee'){				// if the person who is logged in is an employee
 			$table = 'employees_table';
-			$column = 'employee_id';
+			$column = 'employees_id';
 			$header_file = 'employees';
-			$usertype = $_SESSION['user_information']['employees_id'];
+			$user_id = $_SESSION['user_information']['employees_id'];
 		}
 					
 					//-----------   Moving The File
@@ -61,12 +62,14 @@
 			exit;
 		} // this closes the if statement	
 
-		$query = "UPDATE '$table' 
-				  SET image = '$image_name'    
-				  WHERE '$column' = '$usertype'";
+//echo 63;
+		$query = "UPDATE $table SET image = '$image_name'   WHERE $column = '$user_id' ";
+				//UPDATE consumers_table SET image = 'new_image' WHERE consumer_id ='1'
+//echo 68;
+
 
 	 	$result = mysqli_query($connection,$query);
-	 	//header("location: ../$header_file/home_page.php ");
+	 	
 
 
 	} else {
@@ -77,10 +80,11 @@
 		foreach($error as $key => $value) {
 			$output['message'] .= $key.':'.$value;  //list all the spots in which errors had occured within our code.
 			print_r($output);
+			exit;
 		} //closes foreach loop
 	} // closes else statment
 
-
+	//header("location: ../$header_file/home_page.php ");
 	
 
 

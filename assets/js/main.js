@@ -76,7 +76,7 @@ $('document').ready(function() {
 		$(register_right).append(login_page);  
 		
      	$('.whole_form').html(register_form);
-     };
+     }  // registerPage1
 
      function registerPage2(){
      	
@@ -106,14 +106,14 @@ $('document').ready(function() {
 
 		$('.whole_form').html(registerForm2);
 
-     }
+     }  // registerPage 2
 
 
 
 
      $('#signup').click(function(){
      	registerPage();
-     })				
+     });				
 	
 	/*
 	Note i could have done display none or block by grabbing
@@ -150,15 +150,24 @@ $('document').ready(function() {
 		$('.display_area').fadeIn('slow');
 	});
 
+    
+				// select 0-100 functionality
 
-    var $select = $(".1-100");				// select 0-100 functionality
-    for (i=1;i<=100;i++){
-        $select.append($('<option></option>').val(i).html(i));
-    }
+    $('body').on('click','.1-100',function(){
+    	var select = $(".1-100");				
+    	for (i=1;i<=100;i++){
+        	select.append($('<option></option>').val(i).html(i));
+    	}
+	});
+    
+    			// select 0-100 functionality
+
 
     				//TEST
    
     $('.rating-star').click(function(){
+    	console.log("rating: ",$(this).attr('point'));
+    	console.log("topic: ",$(this).attr('topic'));
     	send_rating($(this).attr('topic'),$(this).attr('point'));
     });
 
@@ -179,8 +188,8 @@ $('document').ready(function() {
     		method:'POST',
     		cache:false,
     		success: function(response){
+    			console.log(response);
     			display_data(response);
-    			
     		} // this closes the success function
 
     	});// this closes the ajax call
@@ -196,49 +205,102 @@ $('document').ready(function() {
 
 
      	function display_data(response){   // NOTE response is the same ajax response
+     		//console.log(response);
      		var response_data = response['data'];
+     		console.log("response data",response_data);
+     		// var question_options = response_data[0]['question_options'];
+     		// question_options = JSON.parse(question_options);
+     		// console.log(question_options[0]);
 
-     		console.log(response_data);
-
-
-		     		for(var key in response_data){
-
-						if(response_data[key]['topic'] == 'Food_Quality'){		     			
-			     			
+		     		for(var key in response_data){	     			
+			     			console.log("this response data: ",response_data[key])
 			     			var question = response_data[key]['textbox'];
-			     			var radio_name_attribute = 'questions' +response_data[key]['id'];
+			     			var question_type = response_data[key]['question_type'];
+			     			//console.log(question_type);
+
+			     			var radio_name_attribute = 'questions' +response_data[key]['question_order'];
 			     			var question_options = response_data[key]['question_options'];
 
-			     			var question_li = $('<li>');
+
+
+			     			var question_li = $('<li>',{
+			     				class:'question_li'
+			     			});
 			     			var question_text = $('<span>').html(question);
 			     			
-			     			var radio = null;
+
+			     			//console.log("question options",question_options);
+
+
 			     			
-				     		for(var i in response_data[key][question_options]){
-				     			var question_radio = $('<input>',{
-				     				type:'radio',
-				     				name: radio_name_attribute,
-				     				class:'radio',
-				     				value: question_options,
-				     				}); // this closes the question radio attribute
-				     			 var span = $('<span>').html(question_options);
 
-				     			 radio +=question_radio.insertAfter(span);
-				     		
-				     		} // this closes second for loop
+			     			if(question_type == 'drop-down'){
+			     				var select =$('<select>').attr({
+			     						class: "1-100"
+			     					});
+			     				question_li.append(question,select);
+			     			}
 
-			     			question_li.append(question_text, radio);
-			     			var container = $('#Food_Quality .question_container');
-			     			container.append(question_li);
+			     			 else if(question_type == 'free-form'){
+			     				var textarea = $("<textarea>").attr({
+			     					placeholder: 'What could of been done to give this restaurant a better review',
+			     					class: "textarea",
+			     					name:'textarea_name'
+			     				});
+			     				question_li.append(question,textarea);
+			     			}
+							else
+							{
+								//radio button
+								question_li.append(question_text);
+				     			if(question_options.length)
+				     			{
+					     			var radio_group = $('<span>',{
+					     				class:'question_options_span'
+					     			});
+				     				question_options = JSON.parse(question_options);
+									//console.log("rooster crow "+question_options.length);
+						     		for(var i = 0; i < question_options.length; i++){
+						     			//console.log("I'm in the for loop");
+						     			var question_radio = $('<input>',{
+						     				type:'radio',
+						     				name: radio_name_attribute,
+						     				id: radio_name_attribute+'_'+i, // each radio has a unique id
+						     				class:'radio',
+						     				value: question_options[i],
+						     				}); // this closes the question radio attribute
+						     			 
+						     			 var label = $('<label>',{
+						     			 	for: radio_name_attribute+'_'+i   //  this basically allows the label to be clicked as well
+						     			 }).html(question_options[i]);
 
-			     		} else if(response_data[key]['topic'] == 'Service'){
-								console.log('this is the service');
-						
-						} else if(response_data[key]['topic'] == 'Atmosphere'){
-								console.log('this is the atmosphere');
-						
-						} // if/else
+						     			 radio_group.append(question_radio,label);
+						     		
+						     		} // this closes second for loop
+
+					     			question_li.append(radio_group);	// this holds the whole question
+				     			}
+			     			}
+							
+			     			
+			     			var target_container = response_data[key]['topic'];         // Food Quality
+			     			console.log("target container",target_container);
+			     			target_container = '#'+target_container.replace(" ","_");	// #Food_Quality
+			     			var container = $(target_container+' .question_container'); //#Food_Quality.question_container
+			     			//console.log('going to target ',target_container);
+			     			//console.log(target_container);
+			     			container.append(question_li);						    // This appends the whole question
+
 					} // this closes the for in loop*/
+
+					var submit_button =  $('<input>').attr({
+								     				type:"submit",
+								     				value: "NEXT",
+								     				name: "NEXT"
+								     			 });
+
+							container.append(submit_button);
+
      	} // This closes the display_data
 
 			

@@ -23,7 +23,8 @@
 		<h3>this is my customer profile</h3>
 
 		<div class = 'customer_img'>
-			<form action="../picture_validation/picture_validation.php" method="post" enctype="multipart/form-data">
+			<?php echo "<img src = '../picture_validation/upload/" . $_SESSION['user_information']['image'] . "'" ?> 
+			<form action="../picture_validation/picture_validation.php" method="post" enctype="multipart/form-data" id = 'profile_image'>
 	    		<input type="file" name="picUpload" id="picUpload">
 	    		<input type="submit" value="+" name="submit">
 			</form>
@@ -49,6 +50,8 @@
 <label>Find Restaurant: </label><input type = 'text' name ='restaurant'><br>
 <label>Find an Employee: </label><input type = 'text' name ='restaurant'>
 </section>
+
+<a href = '../questions.php' >Click Here to Calculate a tip for the restaruant</a>
 
 
 <section style = 'background:lightblue'> <!-- Delete this style -->
