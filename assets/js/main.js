@@ -218,7 +218,7 @@ $('document').ready(function() {
 			     			var question_type = response_data[key]['question_type'];
 			     			//console.log(question_type);
 
-			     			var radio_name_attribute = 'questions' +response_data[key]['question_order'];
+			     			var radio_name_attribute = response_data[key]['question_order'];
 			     			var question_options = response_data[key]['question_options'];
 
 
@@ -245,7 +245,7 @@ $('document').ready(function() {
 			     				var textarea = $("<textarea>").attr({
 			     					placeholder: 'What could of been done to give this restaurant a better review',
 			     					class: "textarea",
-			     					name:'textarea_name'
+			     					name: radio_name_attribute
 			     				});
 			     				question_li.append(question,textarea);
 			     			}

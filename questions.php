@@ -50,7 +50,7 @@
 	}
 	/*    Service   */
 
-
+a
 
 	/*    Atmosphere */
 	.atmosphere{
@@ -126,20 +126,20 @@
 		<form action='rating/add_rating.php' method = 'POST'>  <!-- Submitting Form throught PHP rather than ajax because it easier and then more dynamic -->
 		<h3>Click the stars to rate the restaurant</h3>
 			<span class="rating">
-
-			        <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1"/>
+					<!-- Maybe Delete the name in the stars -->
+			        <input type="radio" class="rating-input" id="rating-input-1-5" aname="rating-input-1"/>
 			        <label for="rating-input-1-5" class="rating-star star5" point = '5' topic = 'Food Quality'> </label>
 			        
-			        <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1"/>
+			        <input type="radio" class="rating-input" id="rating-input-1-4" aname="rating-input-1"/>
 			        <label for="rating-input-1-4" class="rating-star star4" point = '4' topic = 'Food Quality'> </label>
 
-			        <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1"/>
+			        <input type="radio" class="rating-input" id="rating-input-1-3" aname="rating-input-1"/>
 			        <label for="rating-input-1-3" class="rating-star star3" point = '3' topic = 'Food Quality'> </label>
 
-			        <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1"/>
+			        <input type="radio" class="rating-input" id="rating-input-1-2" aname="rating-input-1"/>
 			        <label for="rating-input-1-2" class="rating-star star2" point = '2' topic = 'Food Quality'> </label>
 
-			        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1"/>
+			        <input type="radio" class="rating-input" id="rating-input-1-1" aname="rating-input-1"/>
 			        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Food Quality'> </label>
 			</span><br><br>
 			<div class='question_container'></div>
