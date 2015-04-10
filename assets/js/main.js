@@ -189,7 +189,7 @@ $('document').ready(function() {
     		cache:false,
     		success: function(response){
     			console.log(response);
-    			display_data(response);
+    			display_data(response, point);
     		} // this closes the success function
 
     	});// this closes the ajax call
@@ -204,7 +204,7 @@ $('document').ready(function() {
      	
 
 
-     	function display_data(response){   // NOTE response is the same ajax response
+     	function display_data(response, point){   // NOTE response is the same ajax response
      		//console.log(response);
      		var response_data = response['data'];
      		console.log("response data",response_data);
@@ -213,10 +213,11 @@ $('document').ready(function() {
      		// console.log(question_options[0]);
 
 		     		for(var key in response_data){	     			
-			     			console.log("this response data: ",response_data[key])
+			     			//console.log("this response data: ",response_data[key])
 			     			var question = response_data[key]['textbox'];
 			     			var question_type = response_data[key]['question_type'];
-			     			//console.log(question_type);
+			     			var question_id = response_data[key]['id'];
+			     			//console.log(question_id);
 
 			     			var radio_name_attribute = response_data[key]['question_order'];
 			     			var question_options = response_data[key]['question_options'];
@@ -224,15 +225,16 @@ $('document').ready(function() {
 
 
 			     			var question_li = $('<li>',{
-			     				class:'question_li'
+			     				class:'question_li',
+			     				id: question_id,
+			     				question_id: response_data[key]['id'],
+			     				rating: point,
 			     			});
 			     			var question_text = $('<span>').html(question);
 			     			
 
 			     			//console.log("question options",question_options);
-
-
-			     			
+		
 
 			     			if(question_type == 'drop-down'){
 			     				var select =$('<select>').attr({
@@ -294,21 +296,54 @@ $('document').ready(function() {
 					} // this closes the for in loop*/
 
 					var submit_button =  $('<input>').attr({
-								     				type:"submit",
+								     				type:"button",
 								     				value: "NEXT",
-								     				name: "NEXT"
+								     				name: "NEXT",
+								     				class: 'next_button'
 								     			 });
 
-							container.append(submit_button);
+							container.append(submit_button);	
+
+
+							/* this has to be inside the function because the submit button is a local scoper*/
+							$('body').on('click', '.next_button', function(){
+								sendquestions(this);	
+							});						
+
 
      	} // This closes the display_data
 
-			
 
-     	
+     				function sendquestions(target){
+     					console.log('hello',target);
+     					window.mytarget = target;
+     					var form = $(target).parents('form');
+     					var form_elements = $(form).find('input:checked, textarea, select');
+     					var form_data = {};
+     					form_elements.each(function(){
+     						console.log(this);
+     						var field = $(this);
+     						var question_id = $(this).parents('.question_li').attr('question_id');
+     						var question_rating = $(this).parents('.question_li').attr('rating');
+     						var this_data = {id:field.attr('id'), name:field.attr('name'), question_id:question_id, value:field.val(), rating: question_rating};
+     						form_data[question_id]=this_data;
+     					})
+     					console.log('form data: ',form_data );
+     	// 				var selectedVal = "";
+						// var selected = $("#radioDiv input[type='radio']:checked");
+						// if (selected.length > 0) {
+    		// 				selectedVal = selected.val();
+						// }
+						$.ajax({
+							url:'rating/add_rating.php',
+							data: form_data,
+							method: 'POST',
+							success: function(){
+								console.log('success');
+							}
 
-	
-
+						});
+     				}
 
 
 

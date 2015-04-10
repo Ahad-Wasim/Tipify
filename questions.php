@@ -123,7 +123,7 @@ a
 
 	<div class = 'food_quality' id='Food_Quality'>
  
-		<form action='rating/add_rating.php' method = 'POST'>  <!-- Submitting Form throught PHP rather than ajax because it easier and then more dynamic -->
+		 
 		<h3>Click the stars to rate the restaurant</h3>
 			<span class="rating">
 					<!-- Maybe Delete the name in the stars -->
@@ -142,6 +142,7 @@ a
 			        <input type="radio" class="rating-input" id="rating-input-1-1" aname="rating-input-1"/>
 			        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Food Quality'> </label>
 			</span><br><br>
+		<form> 
 			<div class='question_container'></div>
 		</form><br>
 
@@ -158,7 +159,7 @@ a
 
 	<div class = 'service' id = 'service'>
 
-		<form action = 'rating/add_rating.php' method = 'POST'>     <!-- Submitting Form throught PHP rather than ajax because it easier and then more dynamic -->
+		     
 		<h3>Click the stars to rate the restaurant</h3>
 			<span class="rating">
 
@@ -177,9 +178,9 @@ a
 			        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1"/>
 			        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Service'> </label>
 			</span><br><br>
+		<form>
 			<div class='question_container'></div>
 		</form><br>
-
 	</div>   <!-- This closes service div -->
 
 								  <!-- This is the Service Section -->
@@ -190,7 +191,7 @@ a
 
 		<div class = 'atmosphere' id = 'atmosphere'>
 
-			<form action = 'rating/add_rating.php' method = 'POST'> 	<!-- Submitting Form throught PHP rather than ajax because it easier and then more dynamic -->
+				
 			<h3>Click the stars to rate the restaurant</h3>
 				<span class="rating">
 
@@ -209,7 +210,9 @@ a
 				        <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1"/>
 				        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Atmosphere'> </label>
 				</span><br><br>
+			<form> 
 				<div class='question_container'></div>
+
 			</form><br>
 
 		</div> <!-- This Closes Atmosphere -->
