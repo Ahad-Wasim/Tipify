@@ -9,7 +9,7 @@
 	}
 
 
-	$connection = mysqli_connect('localhost','root', '', 'Tipify_Database'); 
+	require_once('../includes/mysql_connect.php'); 
 
 	$query = "SELECT * FROM `questions_table` 
 				WHERE topic = '$topic' AND 

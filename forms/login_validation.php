@@ -13,7 +13,9 @@ if a person in a customer it should be a different page.
 <?php
 session_start();
 
-$connection = mysqli_connect('localhost','root','','Tipify_Database');  // i could use shortcut but I don't want to many forms.
+require_once('../includes/mysql_connect.php');
+
+
 
 $error = [];
 

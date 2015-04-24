@@ -1,8 +1,8 @@
 <?php
-	echo 'hello';
-	exit;
+	// echo 'hello';
+	// exit;
 	session_start();
-	$connection = mysqli_connect('localhost', 'root', '', 'Tipify_Database');
+	require_once('../includes/mysql_connect.php');
 	$error = [];
 	$output = [];
 
