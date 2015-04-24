@@ -190,10 +190,9 @@ $('document').ready(function() {
     		success: function(response){
     			console.log(response);
     			display_data(response, point);
+    		
     		} // this closes the success function
-
     	});// this closes the ajax call
-
     }// this closes send_rating function
 
      				//TEST
@@ -208,9 +207,6 @@ $('document').ready(function() {
      		//console.log(response);
      		var response_data = response['data'];
      		console.log("response data",response_data);
-     		// var question_options = response_data[0]['question_options'];
-     		// question_options = JSON.parse(question_options);
-     		// console.log(question_options[0]);
 
 		     		for(var key in response_data){	     			
 			     			//console.log("this response data: ",response_data[key])
@@ -225,19 +221,19 @@ $('document').ready(function() {
 
 
 			     			var question_li = $('<li>',{
-			     				class:'question_li',
+			     				class:'question_li',						//<li><a>some text</a></li>  were grabbing specifically the li
 			     				id: question_id,
-			     				question_id: response_data[key]['id'],
-			     				rating: point,
+			     				question_id: question_id,					// why do i need this
+			     				rating: point,								// this holds the star rating for that field
 			     			});
-			     			var question_text = $('<span>').html(question);
-			     			
+
+			     			var question_text = $('<span>').html(question);  // span will hold the main question
 
 			     			//console.log("question options",question_options);
 		
 
 			     			if(question_type == 'drop-down'){
-			     				var select =$('<select>').attr({
+			     				var select = $('<select>').attr({
 			     						class: "1-100"
 			     					});
 			     				question_li.append(question,select);
@@ -320,20 +316,21 @@ $('document').ready(function() {
      					var form = $(target).parents('form');
      					var form_elements = $(form).find('input:checked, textarea, select');
      					var form_data = {};
-     					form_elements.each(function(){
+     					form_elements.each(function(){		//LOOPING THROUGH ALL THE OBJECTS
      						console.log(this);
-     						var field = $(this);
-     						var question_id = $(this).parents('.question_li').attr('question_id');
+     						var field = $(this);			// this makes our life easier!!!
+
+     						var question_id = $(this).parents('.question_li').attr('question_id'); // the attr('question_id')  === a number   // every question_id is unique in the loop
      						var question_rating = $(this).parents('.question_li').attr('rating');
      						var this_data = {id:field.attr('id'), name:field.attr('name'), question_id:question_id, value:field.val(), rating: question_rating};
      						form_data[question_id]=this_data;
-     					})
+     					
+     					});   //closes the each loop
+
+
+
      					console.log('form data: ',form_data );
-     	// 				var selectedVal = "";
-						// var selected = $("#radioDiv input[type='radio']:checked");
-						// if (selected.length > 0) {
-    		// 				selectedVal = selected.val();
-						// }
+     	
 						$.ajax({
 							url:'rating/add_rating.php',
 							data: form_data,
