@@ -1,11 +1,41 @@
 	<head>
 		<title>Tipify | Home Page </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel = 'stylesheet' type = 'text/css' href = 'assets/css/main.css'>
 		<link rel = 'stylesheet' href = 'assets/css/bootstrap/css/bootstrap.min.css'>
 		<link rel = 'stylesheet' type = 'text/css' href = 'assets/css/animate.css'>
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel='stylesheet' href = 'assets/css/font-awesome/css/font-awesome.min.css'>
 	</head>
+
+
+
+	<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top ">  <!-- navbar-static-top -->
+		<div class = 'container'>
+			<div class = 'navbar-header'>
+				<button type='button' class = 'navbar-toggle' data-toggle='collapse' data-target='#example'>
+					<span class = 'icon-bar'></span>
+					<span class = 'icon-bar'></span>
+					<span class = 'icon-bar'></span> 
+				</button>
+
+				 <a class="navbar-brand" href="www.http://ahadwasim.com/">Tipify</a>	
+			</div>
+
+			<div class = 'collapse navbar-collapse' id='example'>
+				<ul class = 'nav navbar-nav navbar-right'>
+					<li class = 'bar-color'><a href = '#'>About</a></li>
+					<li class = 'bar-color'><a href = '#'>How It Works</a></li>
+					<li class = 'bar-color'><a href = '#'>Restaurants</a></li>
+					<li class = 'bar-color'><a href = '#'>Write A Review</a></li>
+				</ul>
+			</div>
+
+		</div>
+	
+</header>	
+
 
 
 
@@ -36,8 +66,6 @@
 					<div class = 'whole_form'>
 						
 					</div> <!-- Whole form -->
-
-
 				</form>
 
 				<div class = 'close_button'><a href='javascript:void(0)' onclick = "toggle_visibility('popup-box1')">x</a></div>
@@ -59,97 +87,102 @@
 			</div>
 
 
-			<div id = 'menubar1'>
-		
-				<a href = '#'>How it Works<a></a>
-				<a href = '#'>About Me<a></a>
-				<a href = '#'>Restaurants</a>
-				<a href = '#'>Write a Review</a>
-				<a href = '#'>Help</a>
-
-		</div>
-
 		</header>
 
 
 		
 
+<section id = 'main_section'>		
 		
-		<section id = 'main_section'>
+<style>
+ img{
+ 	width:100%;
+ }
+</style>
 
-		
-			<h1>Add a Carousel Slide show herer</h1>
-		
+	<div id = 'myCarousel' class = 'carousel slide'>
 
+		<ol class = 'carousel-indicators'>
+			<li data-target = '#myCarousel' data-slide-to = '0' class='active'></li>
+			<li data-target = '#myCarousel' data-slide-to = '1' ></li>
+			<li data-target = '#myCarousel' data-slide-to = '2' ></li>
+			<li data-target = '#myCarousel' data-slide-to = '3' ></li>
+			<li data-target = '#myCarousel' data-slide-to = '4' ></li>
+		</ol>
 
-
-			<style>
-				
-			#carousel{
-				width:8000px;
-			}
-
-
-			#carousel ul{
-				list-style-type: none;
-				width:8000px;
-				margin:0;
-				padding:0;
-				position: relative;
-			}
-
-			#carousel li{
-				display:inline;
-				float: left;
-			}
-
-			</style>
-
-
-			<div id = 'carousel' style = 'width:1440px;'>
-			<ul>
-				<li>
-					<img  src = 'assets/css/images/fire.jpg' width = 100%; height = 500px/>
-					<p>These are some pictures</p>
-				</li>
-				<li>
-					<img  src = 'assets/css/images/service.jpg' width =100%; height = 500px/>
-					<p>These are some pictures</p>
-				</li>
-				<li>
-					<img  src = 'assets/css/images/fire.jpg' width = 100%; height = 500px/>
-					<p>These are some pictures</p>
-				</li>
-				<li>
-					<img  src = 'assets/css/images/service.jpg' width = 100%; height = 500px/>
-					<p>These are some pictures</p>
-				</li>
-				<l9
-					<img src = 'assets/css/images/fire.jpg' width = 100%; height = 500px />
-					<p>These are some pictures</p>
-				</li>
-				<li>
-					<img  src = 'assets/css/images/service.jpg' width = 100%; height = 500px/>
-					<p>These are some pictures</p>
-				</li>
-			</ul>
+		<div class = 'carousel-inner' style='width:100%'>
 			
+			<div class = 'item active'>	
+				<img src='assets/css/images/tipify_image1.jpg' alt = 'Wine' class = 'img-responsive'>
+				<div class ='carousel-caption'>
+					<h3>Wine</h3>
+				</div>
 			</div>
+
+			<div class = 'item'>
+				<img src='assets/css/images/tipify_image2.jpg' alt = 'Waiter1' class = 'img-responsive'>
+				<div class ='carousel-caption'>
+					<h3>Waiter 1</h3>
+				</div>
+			</div>
+
+			<div class = 'item'>
+				<img src='assets/css/images/tipify_image3.jpg' alt = 'Chef' class = 'img-responsive'>
+				<div class ='carousel-caption'>
+					<h3>Chef</h3>
+				</div>
+			</div>
+
+			<div class = 'item'>
+				<img src='assets/css/images/tipify_image4.jpg' alt = 'Waiter2' class = 'img-responsive'>
+				<div class ='carousel-caption'>
+					<h3>Waiter 2</h3>
+				</div>
+			</div>
+
+			<div class = 'item'>
+				<img src='assets/css/images/tipify_image5.jpg' alt = 'Waiter3' class = 'img-responsive'>
+				<div class ='carousel-caption'>
+					<h3>Waiter 3</h3>
+				</div>
+			</div>
+
+		</div>
+
+		<a class='carousel-control left' href ='#myCarousel' data-slide ='prev'>
+			<span class = 'icon-prev'></span>
+		</a>
+		<a class='carousel-control right' href ='#myCarousel' data-slide ='next'>
+			<span class = 'icon-next'></span>
+		</a> 
+
+	</div>
+
+</section>
+
+		
+
+
+
+		
+
+
+		
 
 
 
 		<div class= 'container'  >
 			<div class = 'row'>
 
-				<div class = 'col-sm-4 box first'>
+				<div class = 'col-md-4 col-sm-12 box first'>
 						<img src = 'assets/css/images/fire.jpg' class = 'img1'>
 				</div>
 				
-				<div class = 'col-sm-4 box second'>
+				<div class = 'col-md-4 col-sm-12 box second'>
 						<img src = 'assets/css/images/service.jpg' class = 'img2'>
 				</div>
 				
-				<div class = 'col-sm-4 box third'>
+				<div class = 'col-md-4 col-sm-12 box third'>
 						<img src = 'assets/css/images/fire.jpg' class = 'img3'>
 				</div>
 
@@ -157,13 +190,13 @@
 		</div>
 		
 
-		</section>
+		
 
 
 	
 
 		<div style = 'background: #5cc642; height:100px; width: 100%'>
-			<i class=" fa fa-mobile fa-5x"></i>
+			<i class=" fa fa-mobile fa-5x fa-spin"></i>
 		</div>  <!-- DELETE THIS -->
 		
 
@@ -186,14 +219,188 @@
 		</div>
 
 		
+		<style>
+			.box{
+				color:white;
+				text-align: center;	
+			}
 
+			.fa{
+				color:white;
+				margin-right: 8px;
+			}
 
+			.icons{
+				margin-top:24px;
+			}
 
+			ul{
+				list-style-type:none;
+			}
+			ul li a{
+				color:white;
+			}
 
+			.apple,.google{
+				width:175px;
+				height:auto;
+				margin-top:4%;
+				margin-bottom: 5%;
+			}
+			
+			.copyright h3{
+				text-align: center;
+				color:white;
+			}
+
+			.store{
+				width:354px;
+				margin:0 auto;
+			}
+
+			.download{
+				border:1px solid white;
+				padding: 5px 15px 5px 15px;
+				color:white;
+				background:transparent;
+				font-size:2.5em;
+				border-radius:5px;
+			    -webkit-transition-property: width;
+			    -webkit-transition-duration: .3s;
+			    -webkit-transition-timing-function: ease-in-out;
+			    transition-property: background;
+    			transition-duration: .3s;
+    			transition-timing-function: ease-in-out;
+    			margin-top:17px;
+			}
+
+			.download:hover{
+				background:rgba(37, 36, 36, 0.58)
+				
+			}
+
+			.top{
+				text-align: center;
+				color:white;
+				margin-bottom: 3%;
+			}
+
+			.terms{
+				text-align: center;
+				color:white;
+				margin-bottom:4%;
+			}
+
+			@media only screen and (min-width:768px){  
+				.icons{
+					margin-top:-25px;
+				}
+				.download{
+					margin-top:-25px;
+				}
+
+				.copyright{
+					margin-top:50px;
+				}
+			}
+			
+			@media only screen and (min-width:768px) and (max-width: 991px){  
+				.icons{
+					margin-top:-25px;
+				}
+				.download{
+					margin-top:-25px;
+				}
+
+				.copyright{
+					margin-top:50px;
+				}
+			}
+
+			
+
+			@media only screen and (max-width: 768px){	
+				.icons{
+					width:230px;
+					margin:0 auto;
+					margin-top:-25px;
+				}
+				.button{
+					width:198px;
+					margin:0 auto;
+				}
+				.box3{
+					margin-top:-40px;
+				}
+				.box3 h4{
+					display:inline-block;
+					margin-right:10px;
+				}
+			}
+
+			
+
+			
+
+		</style>
 
 		<footer>
-			<h2> This will be my footer</h2>
-			<h2> Why don't you guys install my app</h2>
+			<div class='container-fluid'>
+				<div class="row">
+					<div class='box col-xs-6 col-sm-offset-0 col-sm-4 '>
+						<h2>Discover</h2>
+						<h4>Cities</h4>
+						<h4>Sponsorships</h4>
+						<h4>Help</h4>			
+					</div>
+					<div class='box col-xs-6 col-sm-4 '>
+						<h2>About Us</h2>
+						<h4>Cities</h4>
+						<h4>Sponsorships</h4>
+						<h4>Help</h4>
+						<h4>Help</h4>									
+					</div>
+
+					<div class='box box3 col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4'>
+						<h2>Blog</h2>
+						<h4>Cities</h4>
+						<h4>Sponsorships</h4>
+						<h4>Help</h4>
+						<h4>Help</h4>									
+					</div>
+
+					<div class = 'col-sm-offset-1 col-sm-6 col-md-offset-2 col-md-4 icons'>
+						<i class="fa fa-facebook fa-4x"></i>
+						<i class="fa fa-twitter fa-4x"></i>
+						<i class="fa fa-camera fa-4x"></i>
+						<i class="fa fa-linkedin-square fa-4x"></i>
+					</div>	
+				
+				
+				<div class='col-sm-3 col-md-offset-1 col-md-4 button'>
+					<button class='download' type='button'>Download</button>
+				</div>
+			</div>
+
+
+				<div class='copyright'>
+					<h3>&copy; 2015 Tipify Privacy</h3>
+				</div>
+
+
+					<div class='store'>
+						<img class ='apple' src ='assets/css/images/appstore-black.png'>
+						<img class ='google' src ='assets/css/images/googleplay.png'>
+					</div>
+
+					<div class='terms'>
+						<h4> Terms - Privacy </h4>
+					</div>
+				
+				<div class='top'>
+					<h3>Back To Top</h3>
+				</div>
+
 		</footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -201,7 +408,7 @@
 		<script type = 'text/javascript' src = 'assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
 		<script type = 'text/javascript' src = 'assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
 		<script type= 'text/javascript' src='assets/css/wow_js/wow.js'></script>
-		<script src = 'assets/js/infiniteCarousel/jquery.infinitecarousel.js'></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		
 
 		<script>
@@ -209,13 +416,4 @@
 		</script>
 
 
-		<script>
-			$('document').ready(function(){
-				$('#carousel').infiniteCarousel();    // This is for the carousel	
-			});
-		</script>
-
-		
-
-	
 	</body>
