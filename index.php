@@ -1,3 +1,9 @@
+<!--
+	Author: Ahad Wasim
+	Published: April 18th;
+
+	I own all CopyRights
+-->
 	<head>
 		<title>Tipify | Home Page </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +14,35 @@
 		<link rel='stylesheet' href = 'assets/css/font-awesome/css/font-awesome.min.css'>
 	</head>
 
+	<style>
+	body{
+		margin-top:68px;
+	}
 
+	.navbar-inner {
+    	min-height: 0px;
+	}
+
+	.navbar-brand,
+	.navbar-nav li a {
+	    line-height: 70px;
+	    height: 70px;
+	    padding-top: 0;
+	}
+
+	.navbar-brand img{
+		margin-top: 6px;
+		margin-left: 5%;
+	}
+	.navbar-inverse .navbar-nav>li>a {
+  		font-size: 1.5em;
+  		color:#ffffff;
+	}
+
+	.navbar-inverse .navbar-nav>li>a:hover{
+		color:#5CC642;
+	}
+	</style>
 
 	<header>
 	<nav class="navbar navbar-inverse navbar-fixed-top ">  <!-- navbar-static-top -->
@@ -20,7 +54,7 @@
 					<span class = 'icon-bar'></span> 
 				</button>
 
-				 <a class="navbar-brand" href="www.http://ahadwasim.com/">Tipify</a>	
+				 <a class="navbar-brand" href="www.http://ahadwasim.com/"><img src = 'assets/css/images/Tipify_logo.png'></a>	
 			</div>
 
 			<div class = 'collapse navbar-collapse' id='example'>
@@ -28,11 +62,13 @@
 					<li class = 'bar-color'><a href = '#'>About</a></li>
 					<li class = 'bar-color'><a href = '#'>How It Works</a></li>
 					<li class = 'bar-color'><a href = '#'>Restaurants</a></li>
-					<li class = 'bar-color'><a href = '#'>Write A Review</a></li>
+					<li class = 'bar-color'><a href = '#user' data-toggle = 'modal' class = 'login guide'>Login</a> </li>
+
 				</ul>
 			</div>
 
 		</div>
+	</nav>
 	
 </header>	
 
@@ -46,39 +82,40 @@
 
 		<script type="text/javascript">
 
-	     	function toggle_visibility(id) {
-	       		var e = document.getElementById(id);
-	       			if(e.style.display == 'block')
-	         		  e.style.display = 'none';
-	      			else
-	      			  //e.classList.add('animated zoomOut');
-	          		  e.style.display = 'block';
-	    	}
+	     // 	function toggle_visibility(id) {
+	     //   		var e = document.getElementById(id);
+	     //   			if(e.style.display == 'block')
+	     //     		  e.style.display = 'none';
+	     //  			else
+	     //  			  //e.classList.add('animated zoomOut');
+	     //      		  e.style.display = 'block';
+	    	// }
 		</script>
 
 
-
-	<div id = 'popup-box1' class='popup-position'>
-		<div id = 'popup-wrapper'>
-			<div id = 'popup-container' class = 'animated zoomIn'>
+<?php
+	// <div id = 'popup-box1' class='popup-position'>
+	// 	<div id = 'popup-wrapper'>
+	// 		<div id = 'popup-container' class = 'animated zoomIn'>
 			
-				<form class = 'login_form'>
-					<div class = 'whole_form'>
+	// 			<form class = 'login_form'>
+	// 				<div class = 'whole_form'>
 						
-					</div> <!-- Whole form -->
-				</form>
+	// 				</div> <!-- Whole form -->
+	// 			</form>
 
-				<div class = 'close_button'><a href='javascript:void(0)' onclick = "toggle_visibility('popup-box1')">x</a></div>
-			</div> <!-- popup container -->
-		</div> <!-- popup wrapper end -->
-	</div> <!-- popup_box1 end -->
+	// 			<div class = 'close_button'><a href='javascript:void(0)' onclick = "toggle_visibility('popup-box1')">x</a></div>
+	// 		</div> <!-- popup container -->
+	// 	</div> <!-- popup wrapper end -->
+	// </div> <!-- popup_box1 end -->
+	?>
 
 
 
 
 
 		
-		<header class = 'container-fluid '>
+		<!-- <header class = 'container-fluid '>
 			<img id = 'logo' src = 'assets/css/images/logo.gif'>
 
 			<div class="rightCorner">
@@ -87,7 +124,7 @@
 			</div>
 
 
-		</header>
+		</header> -->
 
 
 		
@@ -113,37 +150,38 @@
 		<div class = 'carousel-inner' style='width:100%'>
 			
 			<div class = 'item active'>	
-				<img src='assets/css/images/tipify_image1.jpg' alt = 'Wine' class = 'img-responsive'>
+				<img src='assets/css/images/tipify_image1.jpg' alt = 'Wine' class = 'img-responsive' style = "height:95vh" >
 				<div class ='carousel-caption'>
-					<h3>Wine</h3>
+					<h3 class='animated bounceInUp'>Wine</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
-				<img src='assets/css/images/tipify_image2.jpg' alt = 'Waiter1' class = 'img-responsive'>
+				<img src='assets/css/images/tipify_image2.jpg' alt = 'Waiter1' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
-					<h3>Waiter 1</h3>
+					<h3 class='animated bounceInUp'>Waiter 1</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
-				<img src='assets/css/images/tipify_image3.jpg' alt = 'Chef' class = 'img-responsive'>
+				<img src='assets/css/images/tipify_image3.jpg' alt = 'Chef' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
-					<h3>Chef</h3>
+					
+					<h3 class='animated bounceInUp'>Chef</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
-				<img src='assets/css/images/tipify_image4.jpg' alt = 'Waiter2' class = 'img-responsive'>
+				<img src='assets/css/images/tipify_image4.jpg' alt = 'Waiter2' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
-					<h3>Waiter 2</h3>
+					<h3 class='animated bounceInUp'>Waiter 2</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
-				<img src='assets/css/images/tipify_image5.jpg' alt = 'Waiter3' class = 'img-responsive'>
+				<img src='assets/css/images/tipify_image5.jpg' alt = 'Waiter3' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
-					<h3>Waiter 3</h3>
+					<h3 class='animated bounceInUp'>Waiter 3</h3>
 				</div>
 			</div>
 
@@ -160,45 +198,126 @@
 
 </section>
 
-		
+
+<section>
+
+<style>
+	.headerDescription{
+		text-align: center;
+	}
+
+	hr {
+	  margin-top: 20px;
+	  margin-bottom: 20px;
+	  border: 0;
+	  border-top: 2px solid #5CC642;
+	}
+
+	.caption{
+		text-align: center;
+	}
+
+	.learnMore{
+		background-color:#5CC642;
+	}
 
 
 
-		
+</style>
 
+	<div class = 'headerDescription'>
+		<h1>How Tipify Works</h1> 
+	</div>	
 
-		
+	<hr>
 
+	<div class ='container'>
+		<div class='row'>
 
-
-		<div class= 'container'  >
-			<div class = 'row'>
-
-				<div class = 'col-md-4 col-sm-12 box first'>
-						<img src = 'assets/css/images/fire.jpg' class = 'img1'>
+			<div class='col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4'>
+				<div class ='thumbnail'>
+					<img src='http://welovebrisbanebayside.com.au/wp-content/uploads/2014/10/restaurant-clip-art-389.jpg'>
+					<div class='caption'>
+						<h1>First Thumbnail</h1>
+						<p>First Time using a thumbnail</p>
+						<a href='#' class= 'learnMore btn btn-success'>Learn More</a>
+					</div>
 				</div>
-				
-				<div class = 'col-md-4 col-sm-12 box second'>
-						<img src = 'assets/css/images/service.jpg' class = 'img2'>
-				</div>
-				
-				<div class = 'col-md-4 col-sm-12 box third'>
-						<img src = 'assets/css/images/fire.jpg' class = 'img3'>
-				</div>
-
 			</div>
-		</div>
-		
 
-		
+			<div class='col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4'>
+				<div class ='thumbnail'>
+					<img src='http://zeendo.com/info/wp-content/uploads/2013/07/apps-that-save-you-money.jpg	'>
+					<div class='caption'>
+						<h1>First Thumbnail</h1>
+						<p>First Time using a thumbnail</p>
+						<a href='#' class= 'learnMore btn btn-success'>Learn More</a>
+					</div>
+				</div>
+			</div>
+
+			<div class='col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4'>
+				<div class ='thumbnail'>
+					<img src='http://www.slate.com/content/dam/slate/archive/2002/10/51_021029_tips_main.jpg.CROP.original-original.jpg'>
+					<div class='caption'>
+						<h1>First Thumbnail</h1>
+						<p>First Time using a thumbnail</p>
+						<a href='#' class= 'learnMore btn btn-success'>Learn More</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 
 	
-
-		<div style = 'background: #5cc642; height:100px; width: 100%'>
-			<i class=" fa fa-mobile fa-5x fa-spin"></i>
-		</div>  <!-- DELETE THIS -->
+</section>
+	
 		
+
+	<style>
+		.searchbackground{
+			width:100%;
+			background:#5CC642;
+			height:500px;
+		}
+
+		.searchRestaurant{
+			text-align: center;
+		}
+
+		.input-group{
+			width:350px;
+			margin:0 auto;
+			position: relative;
+  			top: 20%;
+  			transform: translateY(-50%);
+		}
+
+		.input-group-addon{
+			background:#434953;
+			border:none;
+		}
+
+
+	</style>
+
+		<section class='searchbackground'>
+
+					<div class= 'searchRestaurant'>
+						<h1>ALL AROUND THE WORLD</h1>
+						<h3>Available locally, expanding globally</h3>
+					</div>
+
+        			<div class="input-group">
+            			<input type="text" class="form-control"/> <!-- Use Angular -->
+           				<span class="input-group-addon">
+                			<i class="fa fa-search"></i>
+           				</span>
+        			</div>
+
+		</section>
 
 
 		
@@ -336,13 +455,11 @@
 					display:inline-block;
 					margin-right:10px;
 				}
-			}
-
-			
-
-			
+			}	
 
 		</style>
+
+
 
 		<footer>
 			<div class='container-fluid'>
@@ -402,6 +519,7 @@
 				</div>
 
 		</footer>
+
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script type = 'text/javascript' src = 'assets/js/main.js'></script>

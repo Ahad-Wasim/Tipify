@@ -107,16 +107,16 @@ height:160px;
 	right:0;
 }
 
-.login{
+.register{
 	border-radius:5px;
 	color:white;
 	border:none;
 	font-size: 1.4em;
 }
 
-.register{
+.login{
 	color:white;
-	padding:3px 10px;
+	padding:0 10px;
 	font-size: 1.4em;
 	border-radius:5px;
 	border: 2px solid white;/*#434953*/

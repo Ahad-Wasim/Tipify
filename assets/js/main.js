@@ -4,141 +4,228 @@ $('document').ready(function() {
         $('.pacman').css({ "display": "block"});
     });
 
+    $('.top').click(function(){
+    	topScroll();
+    });
 
-		function loginPage(){
-			var login_form = $('<form>').addClass('login_form').attr({'action':'forms/login_validation.php', 'method':'post'});
-
-			var login_left = $('<div>').addClass('login_left');
-			var email = $('<input>').attr({type: 'email',name: 'email', placeholder: 'email'});
-			 var password = $('<input>').attr({type: 'password',name: 'password', placeholder: 'password'});
-			 var submit = $('<input>').attr({type: 'submit',value: 'submit'});
-
-			var login_right = $('<div>').addClass('login_right');
-			var need_account = $('<h3>').text("Don\'t have an account");
-			var register = $('<h4>').text("Click Here to Register");
-			var signup_link = $("<a>").attr({href: '#'}).text('signup');
-
-			$('.hello').append(login_right);
-			$(login_right).append(need_account);
-			$(login_right).append(register);
-			$(login_right).append(signup_link);
+    function topScroll() {
+            $('html,body').animate({ scrollTop: 0 }, 3000);
+    }
 
 
 
-			$(login_left).append(email,"<br>");
-			$(login_left).append(password,"<br>");
-			$(login_left).append(submit,"<br>");
-			$(login_form).append(login_left);
-			$(login_form).append(login_right);  
-			
-
-     	$('.whole_form').html(login_form);
-
-     	} //this closes loginPage
+/* ------------------------------------------------------------------------------------------------------------------------*/
+													//Login Register
 
 
-     $('#login').click(function(){
-     	loginPage();
-     });
+	function multipleTabs(){
+    var tabsContainer = $('<div>').addClass('container');
+    var ul = $('<ul>').addClass('nav nav-pills nav-justified');
+    var li1 = $('<li>').addClass('active');
+    var li2 = $('<li>');
+    var a1 = $('<a>').attr({href:'#Login','data-toggle':'tab'}).html('Login');
+    var a2 = $('<a>').attr({href:'#Register','data-toggle':'tab'}).html('Register');
+    var hr = $('<hr>');
+
+    var tabConents = $('<div>').addClass('tab-content');
+    var tabPaneLogin = $('<div>').attr({class:'tab-pane fade in active', id:'Login'});
+    var tabPaneRegister = $('<div>').attr({class:'tab-pane fade', id:'Register'});
+    var loginContent = $('<div>').html(createLogin());
+    var registerContent = $('<div>').html(createRegister());
+
+    li1.append(a1);
+    li2.append(a2);
+    ul.append(li1,li2);
+    tabPaneLogin.append(loginContent);
+    tabPaneRegister.append(registerContent);
+    tabConents.append(tabPaneLogin,tabPaneRegister);
+   return tabsContainer.append(ul,hr,tabConents);
+}
 
 
+//$('body').append(tabsContainer);
 
 
-	function registerPage(){
+var modal = $('<div>').attr({class: 'modal fade',id: 'user',role: 'dialog','data-toggle': 'modal'});
 
-		var register_form = $('<form>').addClass('register_form');
-     	var register_left = $('<div>').addClass('register_left');
-		var firstname = $('<input>').attr({type: 'text',name: 'firstname', placeholder: 'First Name'});
-		var lastname =  $('<input>').attr({type: 'text',name: 'lastname', placeholder: 'Last Name'});	
-		var email =  $('<input>').attr({type: 'email',placeholder: 'Email'});
-		var password =  $('<input>').attr({type: 'password',name: 'password', placeholder: 'Password'});
-		var button = $('<input>').attr({type: 'button', value: 'Next Page'}).addClass('nextPage');
+var modal_dialog = $('<div>').attr({class: 'modal-dialog'});
 
+var modal_content = $('<div>').attr({class: 'modal-content'});
 
-		var register_right = $('<div>').addClass('register_right');
-		var why_am_i_here = $('<h3>').text('All ready have an account');
-		var login_direction = $('<h4>').text('Click Here to Login');
-		var login_page = $('<a>').attr({href: '#'}).text('Login!');
-	
+                    
+var modal_header = $('<div>').attr({class: 'modal-header'}).html('This is header');
+                    
+var modal_body = $('<div>').attr({class: 'modal-body'});
 
-		$(register_form).append(register_left);
-		$(register_left).append(firstname,"<br>");
-		$(register_left).append(lastname,"<br>");
-		$(register_left).append(email,"<br>");
-		$(register_left).append(password,"<br>");
-		$(register_left).append(button);	
+var modal_success = multipleTabs();
+modal_body.append(modal_success);
+                    
+var modal_footer = $('<div>').attr({class: 'modal-footer'});
+                    
+var prev_page = $('<button>').attr({type: 'button',class: 'btn btn-primary back_page','data-dismiss': 'modal'}).html('Go back to main page');
+                    
+var close_button = $('<button>').attr({type: 'button',class: 'btn btn-default','data-dismiss': 'modal'}).html('Close');
+                    
+modal_footer.append(prev_page, close_button);
+modal_content.append(modal_body, modal_footer);
+modal_dialog.append(modal_content);
+modal.append(modal_dialog);
 
-
-
-		$(register_form).append(register_right);
-		$(register_right).append(why_am_i_here);
-		$(register_right).append(login_direction);
-		$(register_right).append(login_page);  
-		
-     	$('.whole_form').html(register_form);
-     }  // registerPage1
-
-     function registerPage2(){
-     	
-
-
-
-		var registerForm2 = $('<form>').addClass('registerForm2').attr({'action':'forms/register_validation.php', 'method':'post'});
-		var restaurant_div = $('<div>').addClass('restaurant_div');
-		var restaurant =  $('<input>').attr({type: 'text',name: 'restaurant', placeholder: 'Restaurant'});
-		var motto =  $('<input>').attr({type: 'text',name: 'motto', placeholder: 'Motto'});
-		var age =  $('<input>').attr({type: 'text',name: 'age', placeholder: 'Your age'});
-		var position =  $('<input>').attr({type: 'text',name: 'position', placeholder: 'Position'});
-		var sex = $('<input>').attr({type: 'text', name: 'sex', placeholder:'Gender'});
-		//var male =  $('<input>').attr({type: 'radio',value: 'male'});  use radios later on
-		//var female =  $('<input>').attr({type: 'radio',value: 'female'}); user radios later on
-		var submit =  $('<input>').attr({type: 'submit',name: 'submit', value: 'submit'});
-
-		$(registerForm2).append(restaurant_div);
-		$(restaurant_div).append(restaurant,'<br>');
-		$(restaurant_div).append(motto,'<br>');
-		$(restaurant_div).append(age,'<br>');
-		$(restaurant_div).append(position,'<br>');
-		$(restaurant_div).append(sex,'<br>');
-		//$(restaurant_div).append(male,'<br>');
-		//$(restaurant_div).append(female,'<br>');
-		$(restaurant_div).append(submit);
-
-		$('.whole_form').html(registerForm2);
-
-     }  // registerPage 2
+$('body').append(modal);
 
 
 
 
-     $('#signup').click(function(){
-     	registerPage();
-     });				
-	
-	/*
-	Note i could have done display none or block by grabbing
-	the main form on the html page. Hide if sign up clicked 
-	and display block on login
-	*/
 
 
 
-	$('body').on('click', '.login_right a', function(){
-		console.log('this is register page');
-		registerPage();
-	});
 
 
-	$('body').on('click', '.register_right a', function(){
-		console.log('this is login page');
-		loginPage();
-	});
 
-	
-	$('body').on('click', '.nextPage', function(){
-		console.log('do some function here');
-		registerPage2();
-	});
+
+
+        function createLogin(){  
+
+            var firstDiv = $('<div>').addClass('container');
+            var loginHeader = $('<h2>').text('Login');
+            firstDiv.append(loginHeader);
+            var form = $('<form>').attr({role:'form',action:'forms/login_validation.php', method:'post'});
+            
+            var formGroup1 = $('<div>').attr({class:'form-group'});
+
+            var emailLabel = $('<label>').attr({for:'email'}).text('Email');
+           
+            var emailInput = $('<input>').attr({type:'email', class:'form-control', name:'email', id:'email',placeholder:'Enter Email'});
+            
+            formGroup1.append(emailLabel,emailInput);
+
+            var formGroup2 = $('<div>').attr({class:'form-group'});
+            var passwordLabel = $('<label>').attr({for:'password'}).text('Password');
+            var passwordInput = $('<input>').attr({type:'password', class:'form-control', name:'password', placeholder:'Enter Password'});
+            formGroup2.append(passwordLabel,passwordInput);
+
+            var login_Submit = $('<button>').attr({type:'submit', class:'btn btn-default'}).text('Submit');
+
+            form.append(formGroup1,formGroup2,login_Submit);
+            return firstDiv.append(form);   
+
+        }
+
+
+
+        function createRegister(){
+
+            
+            var choose_container = $('<div>').addClass('container');
+            var choose = $('<div>').addClass('row');
+            var employeeORcustomer = $('<h1>').addClass('col-md-12').text('Are you a');
+            choose.append(employeeORcustomer);
+
+            var clickButton = $('<div>').addClass('row');
+            var employee  = $('<button>').attr({type:'button', class:'btn btn-default employee col-sm-6', name:'restaurant'}).text('Employee');
+            var customer = $('<button>').attr({type:'button', class:'btn btn-default customer col-sm-6', name:'employee'}).text('Customer');
+            clickButton.append(employee,customer);
+           
+            return choose_container.append(choose,clickButton);
+            
+
+
+
+            
+            var firstDiv = $('<div>').addClass('container');
+            var registerHead = $('<h2>').text('Register');
+            firstDiv.append(registerHead);
+            var form = $('<form>').attr({role:'form'});
+
+            var formGroup1 = $('<div>').attr({class:'form-group one'});
+            var firstNameLabel = $('<label>').attr({for:'firstName'}).text('First Name');
+            var firstNameInput = $('<input>').attr({type:'text', class:'form-control', name:'firstName', placeholder:'ex: John'});
+            formGroup1.append(firstNameLabel,firstNameInput);
+
+            var formGroup2 = $('<div>').attr({class:'form-group one'});
+            var lastNameLabel = $('<label>').attr({for:'lastName'}).text('Last Name');
+            var lastNameInput = $('<input>').attr({type:'text', class:'form-control', name:'lastName', placeholder:'ex: Doe'});
+            formGroup2.append(lastNameLabel,lastNameInput);
+
+            var formGroup3 = $('<div>').attr({class:'form-group one'});
+            var emailLabel = $('<label>').attr({for:'email'}).text('Email');
+            var emailInput = $('<input>').attr({type:'email', class:'form-control', name:'email', placeholder:'Enter Email'});
+            formGroup3.append(emailLabel,emailInput);
+
+            var formGroup4 = $('<div>').attr({class:'form-group one'});
+            var passwordLabel = $('<label>').attr({for:'password'}).text('Password');
+            var passwordInput = $('<input>').attr({type:'password', class:'form-control', name:'password', placeholder:'Enter Password'});
+            formGroup4.append(passwordLabel,passwordInput);
+
+           
+
+            var login_Submit = $('<button>').attr({type:'button', class:'btn btn-default next'}).text('Next');
+
+
+            $(login_Submit).on('click',function(){
+                $('.one,.next').fadeOut('slow');
+                setTimeout(function(){   
+
+                    var formGroup5 = $('<div>').attr({class:'form-group two'});
+                    var restaurantLabel = $('<label>').attr({for:'restaurant'}).text('Restaurant');
+                    var restaurantInput = $('<input>').attr({type:'text', class:'form-control', name:'restaurant', placeholder:'Enter Which Restaurant Your work At'});
+                    formGroup5.append(passwordLabel,passwordInput);
+
+                    var formGroup6 = $('<div>').attr({class:'form-group two'});
+                    var mottoLabel = $('<label>').attr({for:'motto'}).text('Motto');
+                    var mottoInput = $('<input>').attr({type:'text', class:'form-control', name:'motto', placeholder:'Give Yourself a Motto'});
+                    formGroup6.append(mottoLabel,mottoInput);
+
+                    var formGroup7 = $('<div>').attr({class:'form-group two'});
+                    var ageLabel = $('<label>').attr({for:'age'}).text('Age');
+                    var ageInput = $('<input>').attr({type:'text', class:'form-control', name:'age', placeholder:'Enter Your age'});
+                    formGroup7.append(ageLabel,ageInput);
+
+                    var formGroup8 = $('<div>').attr({class:'form-group two'});
+                    var positionLabel = $('<label>').attr({for:'position'}).text('Position');
+                    var positionInput = $('<input>').attr({type:'text', class:'form-control', name:'position', placeholder:'Whats your current Position at the restaurant'});
+                    formGroup8.append(positionLabel,positionInput);
+
+                    var genderContainer = $('<div>').addClass('container');
+                    var genderHeader = $('<h2>').html('Gender');
+                    var genderText = $('<p>').html('Please Select Your Gender Below');
+                    genderContainer.append(genderHeader,genderText);
+
+                    var sex = ['Male','Female','Other'];
+
+                    for(var i =0;i<=sex.length-1;i++){
+                        var divRadio = $('<div>').addClass('radio');
+                        var radioLabel = $('<label>');
+                        var radioInput = $('<input>').attr({type:'radio', name:'optradio'});
+                        var span = $('<span>').text(sex[i]);
+                        radioLabel.append(radioInput,span);
+                        divRadio.append(radioLabel);
+                        genderContainer.append(divRadio);
+                    }         
+                    
+                    form.append(formGroup5,formGroup6,formGroup7,formGroup8,genderContainer);
+                },600);
+
+            }); //closes onclick
+
+            form.append(formGroup1,formGroup2,formGroup3,formGroup4,login_Submit);
+            firstDiv.append(form); 
+
+        }// closes create Register
+        											//Login Register
+  /* ------------------------------------------------------------------------------------------------------------------------*/          
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	// This will be the question funcitonality 
