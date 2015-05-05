@@ -60,9 +60,9 @@
 			<div class = 'collapse navbar-collapse' id='example'>
 				<ul class = 'nav navbar-nav navbar-right'>
 					<li class = 'bar-color'><a href = '#'>About</a></li>
-					<li class = 'bar-color'><a href = '#'>How It Works</a></li>
 					<li class = 'bar-color'><a href = '#'>Restaurants</a></li>
-					<li class = 'bar-color'><a href = '#user' data-toggle = 'modal' class = 'login guide'>Login</a> </li>
+					<li class = 'bar-color'><a href = '#user' data-toggle = 'modal' class = 'login'>Login</a></li>
+					<li class = 'bar-color'><a href = '#user' data-toggle = 'modal' class = 'register'>Register</a> </li>
 
 				</ul>
 			</div>
@@ -75,59 +75,9 @@
 
 
 
-	<body class = 'tipify'>
 
 
-	
-
-		<script type="text/javascript">
-
-	     // 	function toggle_visibility(id) {
-	     //   		var e = document.getElementById(id);
-	     //   			if(e.style.display == 'block')
-	     //     		  e.style.display = 'none';
-	     //  			else
-	     //  			  //e.classList.add('animated zoomOut');
-	     //      		  e.style.display = 'block';
-	    	// }
-		</script>
-
-
-<?php
-	// <div id = 'popup-box1' class='popup-position'>
-	// 	<div id = 'popup-wrapper'>
-	// 		<div id = 'popup-container' class = 'animated zoomIn'>
-			
-	// 			<form class = 'login_form'>
-	// 				<div class = 'whole_form'>
-						
-	// 				</div> <!-- Whole form -->
-	// 			</form>
-
-	// 			<div class = 'close_button'><a href='javascript:void(0)' onclick = "toggle_visibility('popup-box1')">x</a></div>
-	// 		</div> <!-- popup container -->
-	// 	</div> <!-- popup wrapper end -->
-	// </div> <!-- popup_box1 end -->
-	?>
-
-
-
-
-
-		
-		<!-- <header class = 'container-fluid '>
-			<img id = 'logo' src = 'assets/css/images/logo.gif'>
-
-			<div class="rightCorner">
-  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = 'login' id = 'login'> Login</a>
-  				<a href = 'javascript:void(0)' onclick = "toggle_visibility('popup-box1')" class = "register" id='signup'> Sign Up </a>
-			</div>
-
-
-		</header> -->
-
-
-		
+<body class = 'tipify'>
 
 <section id = 'main_section'>		
 		
@@ -135,6 +85,42 @@
  img{
  	width:100%;
  }
+
+ /*.wineSignUp{
+ 	border:1px solid green;
+ 	position:absolute;
+ 	top:0;
+ 	left:0;
+ }
+ .carousel-inner{
+ 	position:relative;
+ }*/
+
+ .img1{
+ 	position:absolute;
+ 	top:3%;
+ 	left:4%;
+ }
+
+ .img2{
+ 	position:absolute;
+ 	top:3%;
+ 	right:0;
+ }
+
+ .img1 .wine{
+ 	border:none;
+ 	text-transform: uppercase;
+ 	text-shadow:none;
+ 	font-size: 18px;
+ 	float:left;
+ 	width: 240px;
+ 	padding:15px;
+ 	background:rgb(92, 198, 66);
+ 	color:white;
+ }
+
+
 </style>
 
 	<div id = 'myCarousel' class = 'carousel slide'>
@@ -151,22 +137,21 @@
 			
 			<div class = 'item active'>	
 				<img src='assets/css/images/tipify_image1.jpg' alt = 'Wine' class = 'img-responsive' style = "height:95vh" >
-				<div class ='carousel-caption'>
-					<h3 class='animated bounceInUp'>Wine</h3>
+				<div class ='carousel-caption img1'>
+					<h3 class='animated bounceInUp wine'>Sign Up Now</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
 				<img src='assets/css/images/tipify_image2.jpg' alt = 'Waiter1' class = 'img-responsive' style = "height:95vh">
-				<div class ='carousel-caption'>
-					<h3 class='animated bounceInUp'>Waiter 1</h3>
+				<div class ='carousel-caption img2'>
+					<h3 class='animated bounceInUp waiter1'>Waiter 1</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
 				<img src='assets/css/images/tipify_image3.jpg' alt = 'Chef' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
-					
 					<h3 class='animated bounceInUp'>Chef</h3>
 				</div>
 			</div>
@@ -402,6 +387,7 @@
 				text-align: center;
 				color:white;
 				margin-bottom: 3%;
+				cursor:pointer;
 			}
 
 			.terms{

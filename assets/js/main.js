@@ -250,11 +250,12 @@ $('body').append(modal);
     			// select 0-100 functionality
 
 
+
     				//TEST
    
     $('.rating-star').click(function(){
-    	console.log("rating: ",$(this).attr('point'));
-    	console.log("topic: ",$(this).attr('topic'));
+    	//console.log("rating: ",$(this).attr('point'));
+    	//console.log("topic: ",$(this).attr('topic'));
     	send_rating($(this).attr('topic'),$(this).attr('point'));
     });
 
@@ -263,7 +264,10 @@ $('body').append(modal);
 
 
     function send_rating(topic, point){
-    	console.log('This star has ' + point + ' points');
+    	//console.log('This star has ' + point + ' points');
+
+    	//if point is 5 then store that into the database and move on to the next set of questions.
+
     	$.ajax(
     	{
     		url:'rating/recieve_rating.php',
@@ -275,7 +279,7 @@ $('body').append(modal);
     		method:'POST',
     		cache:false,
     		success: function(response){
-    			console.log(response);
+    			//console.log(response);
     			display_data(response, point);
     		
     		} // this closes the success function
@@ -293,13 +297,13 @@ $('body').append(modal);
      	function display_data(response, point){   // NOTE response is the same ajax response
      		//console.log(response);
      		var response_data = response['data'];
-     		console.log("response data",response_data);
+     		//console.log("response data",response_data);
 
 		     		for(var key in response_data){	     			
 			     			//console.log("this response data: ",response_data[key])
 			     			var question = response_data[key]['textbox'];
 			     			var question_type = response_data[key]['question_type'];
-			     			var question_id = response_data[key]['id'];
+			     			var question_id = response_data[key]['id'];  //NOTE each question has a unique id in the database. 
 			     			//console.log(question_id);
 
 			     			var radio_name_attribute = response_data[key]['question_order'];
@@ -309,8 +313,8 @@ $('body').append(modal);
 
 			     			var question_li = $('<li>',{
 			     				class:'question_li',						//<li><a>some text</a></li>  were grabbing specifically the li
-			     				id: question_id,
-			     				question_id: question_id,					// why do i need this
+			     				id: question_id,							// these are the same thing
+			     				question_id: question_id,					// these are the same thing
 			     				rating: point,								// this holds the star rating for that field
 			     			});
 
@@ -330,6 +334,7 @@ $('body').append(modal);
 			     				var textarea = $("<textarea>").attr({
 			     					placeholder: 'What could of been done to give this restaurant a better review',
 			     					class: "textarea",
+			     					id:'question_id',
 			     					name: radio_name_attribute
 			     				});
 			     				question_li.append(question,textarea);
@@ -343,10 +348,12 @@ $('body').append(modal);
 					     			var radio_group = $('<span>',{
 					     				class:'question_options_span'
 					     			});
-				     				question_options = JSON.parse(question_options);
+				     				question_options = JSON.parse(question_options); // this will convert it from a string to an array.
+									
 									//console.log("rooster crow "+question_options.length);
+
 						     		for(var i = 0; i < question_options.length; i++){
-						     			//console.log("I'm in the for loop");
+						     			
 						     			var question_radio = $('<input>',{
 						     				type:'radio',
 						     				name: radio_name_attribute,
@@ -356,25 +363,24 @@ $('body').append(modal);
 						     				}); // this closes the question radio attribute
 						     			 
 						     			 var label = $('<label>',{
-						     			 	for: radio_name_attribute+'_'+i   //  this basically allows the label to be clicked as well
+						     			 	for: radio_name_attribute+'_'+i   //  this pairs the label with the questions id
 						     			 }).html(question_options[i]);
 
-						     			 radio_group.append(question_radio,label);
+						     			 radio_group.append(question_radio,label);  //apends it inside the span
 						     		
 						     		} // this closes second for loop
-
-					     			question_li.append(radio_group);	// this holds the whole question
+										  question_li.append(radio_group);	// appends the span and now you got a whole question so they are all on the same line
 				     			}
 			     			}
 							
 			     			
 			     			var target_container = response_data[key]['topic'];         // Food Quality
-			     			console.log("target container",target_container);
+			     			//console.log("target container",target_container);
 			     			target_container = '#'+target_container.replace(" ","_");	// #Food_Quality
 			     			var container = $(target_container+' .question_container'); //#Food_Quality.question_container
 			     			//console.log('going to target ',target_container);
 			     			//console.log(target_container);
-			     			container.append(question_li);						    // This appends the whole question
+			     			container.append(question_li);						    // This appends the whole question to #Food_Quality
 
 					} // this closes the for in loop*/
 
@@ -398,25 +404,50 @@ $('body').append(modal);
 
 
      				function sendquestions(target){
-     					console.log('hello',target);
+     					//console.log('hello',target);
      					window.mytarget = target;
      					var form = $(target).parents('form');
-     					var form_elements = $(form).find('input:checked, textarea, select');
-     					var form_data = {};
-     					form_elements.each(function(){		//LOOPING THROUGH ALL THE OBJECTS
-     						console.log(this);
-     						var field = $(this);			// this makes our life easier!!!
 
-     						var question_id = $(this).parents('.question_li').attr('question_id'); // the attr('question_id')  === a number   // every question_id is unique in the loop
-     						var question_rating = $(this).parents('.question_li').attr('rating');
-     						var this_data = {id:field.attr('id'), name:field.attr('name'), question_id:question_id, value:field.val(), rating: question_rating};
+     					var textarea = document.querySelector('.textarea');
+
+     					if(textarea.value !== ''){
+     						textarea.classList.add('notempty');
+     					} else if (textarea.value === ''){
+     						textarea.classList.add('empty');
+     					}
+
+
+
+     					var form_elements = $(form).find('input:checked, .notempty, select');  //this tell what elements to loop throught and too see if it has answers
+     					var form_data = {};
+     					form_elements.each(function(){		//looping through all the elements that we've found
+     						
+     						var notempty = document.querySelector('.notempty');
+     					   
+     					    if($(this)[0].nodeName == 'TEXTAREA'){
+     					    	$(this).removeClass('.notempty');
+     					    }
+
+     						var field = $(this);  //referring to the current element that is being looped
+
+     						var question_id = field.parents('.question_li').attr('question_id'); // each li has a class of .question li  question id are the unique id's inside the database.
+     						var question_rating = field.parents('.question_li').attr('rating');  // the total amount of stars the consumer gave.
+
+     						/* all these elements have parents and were looking for the .question_li parent */
+     						// all li have question id therefore all parents have question id as well.
+     						//Note when it is looping it only goes through the inputs that are checked
+
+     						var this_data = {question_number:field.attr('name'),question_id:question_id, value:field.val(), rating: question_rating};
+     						
      						form_data[question_id]=this_data;
      					
      					});   //closes the each loop
 
+     					//textarea give id to the textareasreturn undefined
 
 
-     					console.log('form data: ',form_data );
+
+     					console.log('form data: ',form_data);
      	
 						$.ajax({
 							url:'rating/add_rating.php',
@@ -425,27 +456,11 @@ $('body').append(modal);
 							success: function(){
 								console.log('success');
 							}
-
 						});
      				}
 
-
-
-
-
-
 	// This Section will be the question funtionality.
-     	
-	
-
 
 }); // this closes the main document
-
-
-
-     
-
-
-
 
 

@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	if(isset($_SESSION['user_information'])){
+?> <h1>Welcome</h1> <a href='forms/logout.php'>Logout</a> <?php
+    
+	} else {
+		echo "please log in <a href='index.php'>Login</a>";
+	}
+?>
+
+
 <style>
 	#questionbox{
 		border:1px solid black;
@@ -223,7 +234,7 @@ a
 										<!-- This is the Atmosphere -->
 
 
-										
+
 
 
 
@@ -233,7 +244,6 @@ a
 		<script type = 'text/javascript' src = 'assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
 		<script type = 'text/javascript' src = 'assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
 		<script type= 'text/javascript' src='assets/css/wow_js/wow.js'></script>
-		<script src = 'assets/js/infiniteCarousel/jquery.infinitecarousel.js'></script> <!-- Use FlexSlider  this one sucks-->
 
 
 

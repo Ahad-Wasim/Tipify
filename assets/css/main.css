@@ -6,85 +6,7 @@
 
 .tipify{
 	background: #EEE;
-
 }
-
-
-/* login + Register popup */
-
-.popup-position{ 
-	display:none;
-	position:fixed;   /* This will allow it to be fixed*/
-	top:0;			 
-	left:0;
-	background-color: rgba(0,0,0,0.7);
-	width:100%;    	  /* 100% of the page */
-	height:100%;
-	z-index: 1;		  /* So it can put the z-index over the picture. untrigger this function to see what happens */
-}
-
-#popup-wrapper{
-	width:500px;
-	margin:70px auto; /* this aligns it on the page */
-	text-align: left;
-}
-
-#popup-container{	 /* this is the actual container */
-	background:white;
-	height:40vh;
-	width:40vw;
-	display:table;
-}
-
-.close_button{
-	position:absolute;
-	top: 0;
-	right: 0;
-	display:inline-block;
-	font-size: 20px;
-	padding:5px 15px;
-	background:red;
-	font-weight:bold;
-}
-
-.close_button a{
-	text-decoration: none;
-	color:white;
-}
-
-
- .login_left{
- 	border:1px solid red;					
- 	display:table-cell;
- }
-
-
-.login_right{
-	border:1px solid green;
-	display:table-cell;
-}
-
-
-.register_form{
- 	background:lavender;
- 	display:table;
- }
-
- .register_left{
- 	border:1px solid red;
- 	display:table-cell;
- }
-
-
-.register_right{
-	border:1px solid green;
-	display:table-cell;
-}
-
-
-/* login + Register popup */
-
-
 
 
 
@@ -113,15 +35,6 @@ height:160px;
 	border:none;
 	font-size: 1.4em;
 }
-
-.login{
-	color:white;
-	padding:0 10px;
-	font-size: 1.4em;
-	border-radius:5px;
-	border: 2px solid white;/*#434953*/
-}
-
 
 
 /*  Default Page Header    */
