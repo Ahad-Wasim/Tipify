@@ -71,7 +71,10 @@ modal_content.append(modal_body, modal_footer);
 modal_dialog.append(modal_content);
 modal.append(modal_dialog);
 
-$('body').append(modal);
+$('.login').click(function(){
+	$('body').append(modal);
+});
+
 
 
 
@@ -214,15 +217,6 @@ $('body').append(modal);
         }// closes create Register
         											//Login Register
   /* ------------------------------------------------------------------------------------------------------------------------*/          
-
-
-
-
-
-
-
-
-
 
 
 
@@ -444,7 +438,6 @@ $('body').append(modal);
      					});   //closes the each loop
 
      					//textarea give id to the textareasreturn undefined
-
 
 
      					console.log('form data: ',form_data);

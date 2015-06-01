@@ -5,11 +5,16 @@
 
 <head>
 		<title>Tipify | Customers Page</title>
-		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/main.css'>
-		<link rel = 'stylesheet' href = '../assets/css/bootstrap/css/bootstrap.min.css'>
-		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/animate.css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/main.css'> 
+		<link rel = 'stylesheet' href = '../assets/css/bootstrap/css/bootstrap.min.css'> 
+		<link rel = 'stylesheet' type = 'text/css' href = '../assets/css/animate.css'> 
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href = '../assets/css/font-awesome/css/font-awesome.min.css'>
 </head>
+
+
+	
 
 <body>
 
@@ -44,62 +49,87 @@
 	</style>
 
 
+<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top ">  <!-- navbar-static-top -->
+			<div class = 'container'>
+				<div class = 'navbar-header'>
+					<button type='button' class = 'navbar-toggle' data-toggle='collapse' data-target='#example'>
+						<span class = 'icon-bar'></span>
+						<span class = 'icon-bar'></span>
+						<span class = 'icon-bar'></span> 
+					</button>
 
-<nav class="navbar navbar-inverse navbar-fixed-top ">  <!-- navbar-static-top -->
-		<div class = 'container'>
-			<div class = 'navbar-header'>
-				<button type='button' class = 'navbar-toggle' data-toggle='collapse' data-target='#example'>
-					<span class = 'icon-bar'></span>
-					<span class = 'icon-bar'></span>
-					<span class = 'icon-bar'></span> 
-				</button>
+					 <a class="navbar-brand" href="www.http://ahadwasim.com/"><img src = '../assets/css/images/Tipify_logo.png'></a>	
+				</div>
 
-				 <a class="navbar-brand" href="www.http://ahadwasim.com/"><img src = '../assets/css/images/Tipify_logo.png'></a>	
+				<div class = 'collapse navbar-collapse' id='example'>
+					<ul class = 'nav navbar-nav navbar-right'>
+						<li class = 'bar-color'><a href = '#'>Calculate Tip</a></li>
+						<li class = 'bar-color'><a href = '#'>Restaurant</a></li>
+						<li class = 'bar-color'><a href = '#'>Employee</a></li>
+						<li class = 'bar-color'><a href = '../forms/logout.php'>Logout</a></li>
+					</ul>
+				</div>
+
 			</div>
-
-			<div class = 'collapse navbar-collapse' id='example'>
-				<ul class = 'nav navbar-nav navbar-right'>
-					<li class = 'bar-color'><a href = '#'>Calculate Tip</a></li>
-					<li class = 'bar-color'><a href = '#'>Restaurant</a></li>
-					<li class = 'bar-color'><a href = '#'>Employee</a></li>
-					<li class = 'bar-color'><a href = '../forms/logout.php'>Logout</a></li>
-				</ul>
-			</div>
-
-		</div>
-</nav>
+	</nav>
+</header>
 
 
-			
-	        	<h1> Welcome <?php echo $_SESSION['user_information']['name']?> </h1>
+<style>
+	.welcome{
+		text-align: center;
+	}
+</style>
 
 
-<
+<section>
+	<div class='welcome'>
+		<h1> Welcome <?php echo $_SESSION['user_information']['name']?> </h1>
+	</div>
+</section>
+<hr>
+	        	
+
+
+
 
 
 
 
 <section>
-	<div class = 'customer_profile'>
-		<h3>this is my customer profile</h3>
+	<div class='container-fluid'>
+		<div class='row'>
 
-		<div class = 'customer_img'>
-			<?php echo "<img src = '../picture_validation/upload/" . $_SESSION['user_information']['image'] . "'" ?> 
-			<form action="../picture_validation/picture_validation.php" method="post" enctype="multipart/form-data" id = 'profile_image'>
-	    		<input type="file" name="picUpload" id="picUpload">
-	    		<input type="submit" value="+" name="submit">
-			</form>
+			<div class = 'customer_profile col-sm-7'>
+				<h1><?php echo $_SESSION['user_information']['name']?></h1>
+				<div class = 'customer_img'>
+					<?php echo "<img src = '../picture_validation/upload/" . $_SESSION['user_information']['image'] . "'" ?> 
+					<form action="../picture_validation/picture_validation.php" method="post" enctype="multipart/form-data" id = 'profile_image'>
+			    		<input type="file" name="picUpload" id="picUpload">
+			    		<input type="submit" value="+" name="submit">
+					</form>
+				</div>
+				<small><?php echo $_SESSION['user_information']['email']?></small>
+				<small><?php echo $_SESSION['user_information']['phone']?></small>
+				<small><?php echo $_SESSION['user_information']['age'] ?></small>
+			</div>
+
+				<div class='col-sm-5'>
+					<label>Find Restaurant: </label>
+					<input type = 'text' name ='restaurant'><br>
+					<label>Find an Employee: </label>
+					<input type = 'text' name ='restaurant'>
+				</div>
 		</div>
-		
-
-
-
-
-		<small><?php echo $_SESSION['user_information']['name']?></small>  <!-- use javascrip to get this variable -->
-		<small><?php echo $_SESSION['user_information']['email']?></small>
-		<small><?php echo $_SESSION['user_information']['phone']?></small>
-		<small><?php echo $_SESSION['user_information']['age'] ?></small>
 	</div>
+		
+		  
+		
+	</div>
+		</div>
+	</div>
+
 </section>
 
 
@@ -108,16 +138,17 @@
 
 
 <section style = 'background:orange'> <!-- Delete this style -->
-<label>Find Restaurant: </label><input type = 'text' name ='restaurant'><br>
-<label>Find an Employee: </label><input type = 'text' name ='restaurant'>
+
 </section>
 
 <a href = '../questions.php' >Click Here to Calculate a tip for the restaruant</a>
 
 
 <section style = 'background:lightblue'> <!-- Delete this style -->
+	<h3>Past Tips</h3>
 	<h3>Write a review</h3>
 	<textarea placeholder= 'write a review'></textarea>
+	<h3>Account Settings</h3>
 </section>
 
 
@@ -315,10 +346,10 @@
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script type = 'text/javascript' src = 'assets/js/main.js'></script>
-		<script type = 'text/javascript' src = 'assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
-		<script type = 'text/javascript' src = 'assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
-		<script type= 'text/javascript' src='assets/css/wow_js/wow.js'></script>
+		<script type = 'text/javascript' src = '../assets/js/main.js'></script>
+		<script type = 'text/javascript' src = '../assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
+		<script type = 'text/javascript' src = '../assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
+		<script type= 'text/javascript' src='../assets/css/wow_js/wow.js'></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		
 

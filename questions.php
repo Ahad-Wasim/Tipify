@@ -6,7 +6,7 @@
 	} else {
 		echo "please log in <a href='index.php'>Login</a>";
 	}
-?>
+?> <!-- Include this on every page -->
 
 
 <style>
@@ -116,17 +116,72 @@ a
 
 
 
+<?php /*-----------------------------------------------------------------------------------------------------------------*/?>
+
+<style>
+	.questionsbox{
+		background:rgb(118, 234, 61);
+		margin:0 auto;
+		width:90%;
+		height:500px;
+	}
+
+	.curious{
+		border:none;
+		background:#434953;
+		border-radius:10px;
+		color:white;
+		width: 220px;
+		padding:10px;
+		font-size: 24px;
+	}
+</style>
+
+
 		
 				<!-- First Box -->
-<div id = 'questionbox'>
-	<div class = 'display_area'>
-		<h1>Lets find out how much</h1>
-		<h2>This Restaurant Sucked</h2>
-		<div class = 'button_border'><input type='submit' id = 'startbutton' value = 'Start'></div>
-	</div>
-</div>
+				<div class = 'questionsbox'>
+					<h2>How much Should I Tip<h2>
+					<button class='curious' type ='button'>Lets find out</button>
+
+					<?php
+
+					// <h3>Click the stars to rate the restaurant</h3>
+					// <span class="rating">
+					// 	<!-- Maybe Delete the name in the stars -->
+				 //        <input type="radio" class="rating-input" id="rating-input-1-5" aname="rating-input-1"/>
+				 //        <label for="rating-input-1-5" class="rating-star star5" point = '5' topic = 'Food Quality'> </label>
+				        
+				 //        <input type="radio" class="rating-input" id="rating-input-1-4" aname="rating-input-1"/>
+				 //        <label for="rating-input-1-4" class="rating-star star4" point = '4' topic = 'Food Quality'> </label>
+
+				 //        <input type="radio" class="rating-input" id="rating-input-1-3" aname="rating-input-1"/>
+				 //        <label for="rating-input-1-3" class="rating-star star3" point = '3' topic = 'Food Quality'> </label>
+
+				 //        <input type="radio" class="rating-input" id="rating-input-1-2" aname="rating-input-1"/>
+				 //        <label for="rating-input-1-2" class="rating-star star2" point = '2' topic = 'Food Quality'> </label>
+
+				 //        <input type="radio" class="rating-input" id="rating-input-1-1" aname="rating-input-1"/>
+				 //        <label for="rating-input-1-1" class="rating-star star1" point = '1' topic = 'Food Quality'> </label>
+					// </span><br><br>
+					?>
+
+				</div>
+
 				<!-- First Box -->
 		
+<?php /*-----------------------------------------------------------------------------------------------------------------*/?>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

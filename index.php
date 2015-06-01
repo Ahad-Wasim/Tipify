@@ -44,6 +44,8 @@
 	}
 	</style>
 
+<body class = 'tipify'>
+
 	<header>
 	<nav class="navbar navbar-inverse navbar-fixed-top ">  <!-- navbar-static-top -->
 		<div class = 'container'>
@@ -77,7 +79,7 @@
 
 
 
-<body class = 'tipify'>
+
 
 <section id = 'main_section'>		
 		
@@ -85,16 +87,6 @@
  img{
  	width:100%;
  }
-
- /*.wineSignUp{
- 	border:1px solid green;
- 	position:absolute;
- 	top:0;
- 	left:0;
- }
- .carousel-inner{
- 	position:relative;
- }*/
 
  .img1{
  	position:absolute;
@@ -118,6 +110,12 @@
  	padding:15px;
  	background:rgb(92, 198, 66);
  	color:white;
+ 	clear:both;
+ }
+
+ .tips{
+ 	border:1px solid black;
+ 	float:left;
  }
 
 
@@ -130,7 +128,6 @@
 			<li data-target = '#myCarousel' data-slide-to = '1' ></li>
 			<li data-target = '#myCarousel' data-slide-to = '2' ></li>
 			<li data-target = '#myCarousel' data-slide-to = '3' ></li>
-			<li data-target = '#myCarousel' data-slide-to = '4' ></li>
 		</ol>
 
 		<div class = 'carousel-inner' style='width:100%'>
@@ -138,6 +135,7 @@
 			<div class = 'item active'>	
 				<img src='assets/css/images/tipify_image1.jpg' alt = 'Wine' class = 'img-responsive' style = "height:95vh" >
 				<div class ='carousel-caption img1'>
+					<h1 class='animated zoomIn tips '>Send Tips From Anywhere</h1>
 					<h3 class='animated bounceInUp wine'>Sign Up Now</h3>
 				</div>
 			</div>
@@ -145,14 +143,14 @@
 			<div class = 'item'>
 				<img src='assets/css/images/tipify_image2.jpg' alt = 'Waiter1' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption img2'>
-					<h3 class='animated bounceInUp waiter1'>Waiter 1</h3>
+					<h3 class='animated bounceInUp waiter1'>Available All Around The World</h3>
 				</div>
 			</div>
 
 			<div class = 'item'>
 				<img src='assets/css/images/tipify_image3.jpg' alt = 'Chef' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
-					<h3 class='animated bounceInUp'>Chef</h3>
+					<h3 class='animated bounceInUp'>Don't you want to tip her</h3>
 				</div>
 			</div>
 
@@ -160,13 +158,6 @@
 				<img src='assets/css/images/tipify_image4.jpg' alt = 'Waiter2' class = 'img-responsive' style = "height:95vh">
 				<div class ='carousel-caption'>
 					<h3 class='animated bounceInUp'>Waiter 2</h3>
-				</div>
-			</div>
-
-			<div class = 'item'>
-				<img src='assets/css/images/tipify_image5.jpg' alt = 'Waiter3' class = 'img-responsive' style = "height:95vh">
-				<div class ='carousel-caption'>
-					<h3 class='animated bounceInUp'>Waiter 3</h3>
 				</div>
 			</div>
 
@@ -264,20 +255,25 @@
 	<style>
 		.searchbackground{
 			width:100%;
-			background:#5CC642;
+			abackground:#5CC642;
+			background: url(assets/css/images/world_map.png);
+			background-size: cover;
+			background-color: #5CC642;
 			height:500px;
+			text-align: center;
+			color:white;
 		}
 
-		.searchRestaurant{
-			text-align: center;
+		.searchbackground h1{
+			display:inline-block;
+			margin-top: 3%;
+			font-weight: bold;
 		}
 
 		.input-group{
 			width:350px;
 			margin:0 auto;
-			position: relative;
-  			top: 20%;
-  			transform: translateY(-50%);
+			margin-top: 3%;
 		}
 
 		.input-group-addon{
@@ -285,27 +281,34 @@
 			border:none;
 		}
 
+		.searchbackground h3{
+			margin-top: 3%;
+			font-weight: bold;
+		}
+		.searchbackground h4{
+			margin-top: 2%;
+			font-weight: bold;
+		}
+
 
 	</style>
 
-		<section class='searchbackground'>
 
-					<div class= 'searchRestaurant'>
-						<h1>ALL AROUND THE WORLD</h1>
-						<h3>Available locally, expanding globally</h3>
-					</div>
+		 <section>
+		 	<div class='searchbackground'>
+		 		<h1>All AROUND THE WORLD</h1>
+		 		<h3>Available locally, expanding globally</h3>
+		 	
 
-        			<div class="input-group">
-            			<input type="text" class="form-control"/> <!-- Use Angular -->
-           				<span class="input-group-addon">
-                			<i class="fa fa-search"></i>
-           				</span>
-        			</div>
+			 	<div class="input-group">
+	             	<input type="text" class="form-control"/> 
+	            	<span class="input-group-addon"><i class="fa fa-search"></i></span>
+	         	</div>
 
-		</section>
-
-
-		
+	         	<h4>View All Cities</h4> 
+         	</div>
+		 </section>
+			
 
 		<div id='geolocation'>
 			<h3> Click here to determine your longitude and latitude</h3>
@@ -384,9 +387,11 @@
 			}
 
 			.top{
-				text-align: center;
-				color:white;
+				display:inline-block;
+				width:100%;
+				text-align: center;	
 				margin-bottom: 3%;
+				color:white;
 				cursor:pointer;
 			}
 
@@ -394,6 +399,13 @@
 				text-align: center;
 				color:white;
 				margin-bottom:4%;
+			}
+
+			footer{
+				width:100%;
+				position:relative;
+				bottom:0;
+				background:#434953;
 			}
 
 			@media only screen and (min-width:768px){  
@@ -426,13 +438,16 @@
 
 			@media only screen and (max-width: 768px){	
 				.icons{
-					width:230px;
+					width:266px;
 					margin:0 auto;
-					margin-top:-25px;
+					margin-top: -85px;
 				}
+
 				.button{
 					width:198px;
 					margin:0 auto;
+					margin-top:42px;
+					
 				}
 				.box3{
 					margin-top:-40px;
@@ -440,6 +455,17 @@
 				.box3 h4{
 					display:inline-block;
 					margin-right:10px;
+				}
+
+				.copyright h3{
+					margin-top:80px;
+				}
+
+				.store{
+					margin-top: 10%;
+				}
+				.terms{
+					margin-top:9%;
 				}
 			}	
 
@@ -471,8 +497,11 @@
 						<h4>Help</h4>
 						<h4>Help</h4>									
 					</div>
+				</div>
 
-					<div class = 'col-sm-offset-1 col-sm-6 col-md-offset-2 col-md-4 icons'>
+				<div class = 'row'>
+
+					<div class = 'col-sm-offset-1 col-sm-7 col-md-offset-2 col-md-4 icons'>
 						<i class="fa fa-facebook fa-4x"></i>
 						<i class="fa fa-twitter fa-4x"></i>
 						<i class="fa fa-camera fa-4x"></i>
@@ -480,8 +509,9 @@
 					</div>	
 				
 				
-				<div class='col-sm-3 col-md-offset-1 col-md-4 button'>
-					<button class='download' type='button'>Download</button>
+					<div class='col-sm-3 col-md-offset-1 col-md-4 button'>
+						<button class='download' type='button'>Download</button>
+					</div>
 				</div>
 			</div>
 
@@ -507,12 +537,12 @@
 		</footer>
 
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type = 'text/javascript' src = 'assets/js/jquery-1.11.2.min.js'></script>
 		<script type = 'text/javascript' src = 'assets/js/main.js'></script>
 		<script type = 'text/javascript' src = 'assets/prototypes/geolocation.js'></script> <!-- Add this to your main.js file soon -->
 		<script type = 'text/javascript' src = 'assets/prototypes/6digit.js'></script> <!-- Add this to your main.js file soon -->
-		<script type= 'text/javascript' src='assets/css/wow_js/wow.js'></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type = 'text/javascript' src = 'assets/css/wow_js/wow.js'></script>
+		<script type = 'text/javascript' src = 'assets/css/bootstrap/js/bootstrap.min.js'></script>
 		
 
 		<script>
